@@ -1,0 +1,1206 @@
+acpi/video.c:	input->name = acpi_device_name(video->device);
+acpi/video.c:	input->phys = video->phys;
+acpi/video.c:	input->id.bustype = BUS_HOST;
+acpi/video.c:	input->id.product = 0x06;
+acpi/video.c:	input->dev.parent = &device->dev;
+acpi/video.c:	input->evbit[0] = BIT(EV_KEY);
+acpi/video.c:	set_bit(KEY_SWITCHVIDEOMODE, input->keybit);
+acpi/video.c:	set_bit(KEY_VIDEO_NEXT, input->keybit);
+acpi/video.c:	set_bit(KEY_VIDEO_PREV, input->keybit);
+acpi/video.c:	set_bit(KEY_BRIGHTNESS_CYCLE, input->keybit);
+acpi/video.c:	set_bit(KEY_BRIGHTNESSUP, input->keybit);
+acpi/video.c:	set_bit(KEY_BRIGHTNESSDOWN, input->keybit);
+acpi/video.c:	set_bit(KEY_BRIGHTNESS_ZERO, input->keybit);
+acpi/video.c:	set_bit(KEY_DISPLAY_OFF, input->keybit);
+acpi/button.c:			int keycode = test_bit(KEY_SLEEP, input->keybit) ?
+acpi/button.c:	input->name = name;
+acpi/button.c:	input->phys = button->phys;
+acpi/button.c:	input->id.bustype = BUS_HOST;
+acpi/button.c:	input->id.product = button->type;
+acpi/button.c:	input->dev.parent = &device->dev;
+acpi/button.c:		input->evbit[0] = BIT_MASK(EV_KEY);
+acpi/button.c:		set_bit(KEY_POWER, input->keybit);
+acpi/button.c:		input->evbit[0] = BIT_MASK(EV_KEY);
+acpi/button.c:		set_bit(KEY_SLEEP, input->keybit);
+acpi/button.c:		input->evbit[0] = BIT_MASK(EV_SW);
+acpi/button.c:		set_bit(SW_LID, input->swbit);
+Binary file built-in.o matches
+cbus/retu-pwrbutton.c: * Driver for sending retu power button event to input-layer
+gpu/drm/i915/intel_tv.c:		unsigned int hactive_s = input->w;
+gpu/drm/i915/intel_tv.c:		unsigned int vactive_s = input->h;
+gpu/drm/i915/intel_tv.c:		if (tv_mode->max_srcw && input->w > tv_mode->max_srcw)
+gpu/drm/i915/intel_tv.c:		if (input->w > 1024 && (!tv_mode->progressive
+gpu/drm/i915/intel_tv.c:		strncpy(mode_ptr->name, input->name, DRM_DISPLAY_MODE_LEN);
+hid/hid-ezkey.c:		struct input_dev *input = field->hidinput->input;
+hid/hid-microsoft.c:		set_bit(EV_REP, input->evbit);
+hid/hid-microsoft.c:		set_bit(KEY_F14, input->keybit);
+hid/hid-microsoft.c:		set_bit(KEY_F15, input->keybit);
+hid/hid-microsoft.c:		set_bit(KEY_F16, input->keybit);
+hid/hid-microsoft.c:		set_bit(KEY_F17, input->keybit);
+hid/hid-microsoft.c:		set_bit(KEY_F18, input->keybit);
+hid/hid-microsoft.c:	set_bit(EV_REP, hi->input->evbit);
+hid/hid-microsoft.c:		struct input_dev *input = field->hidinput->input;
+hid/hid-cypress.c:		struct input_dev *input = field->hidinput->input;
+hid/hid-dr.c:	struct input_dev *dev = hidinput->input;
+hid/hid-pl.c:		dev = hidinput->input;
+hid/hid-a4tech.c:	input = field->hidinput->input;
+hid/hid-lg2ff.c:	struct input_dev *dev = hidinput->input;
+hid/hid-lg.c:	set_bit(EV_REP, hi->input->evbit);
+hid/hid-lg.c:		input_event(field->hidinput->input, usage->type, usage->code,
+hid/hid-core.c:			if (hidinput->input->key[i])
+hid/hid-input.c:	struct input_dev *input = hidinput->input;
+hid/hid-input.c:		set_bit(EV_REP, input->evbit);
+hid/hid-input.c:			if (!test_bit(BTN_TOUCH, input->keybit)) {
+hid/hid-input.c:				set_bit(EV_KEY, input->evbit);
+hid/hid-input.c:				set_bit(BTN_TOUCH, input->keybit);
+hid/hid-input.c:		set_bit(EV_REP, input->evbit);
+hid/hid-input.c:		set_bit(EV_REP, input->evbit);
+hid/hid-input.c:	set_bit(usage->type, input->evbit);
+hid/hid-input.c:		if (usage->code == ABS_MT_POSITION_X && input->hint_events_per_packet == 0)
+hid/hid-input.c:			set_bit(i, input->absbit);
+hid/hid-input.c:		set_bit(KEY_VOLUMEUP, input->keybit);
+hid/hid-input.c:		set_bit(KEY_VOLUMEDOWN, input->keybit);
+hid/hid-input.c:		set_bit(EV_MSC, input->evbit);
+hid/hid-input.c:		set_bit(MSC_SCAN, input->mscbit);
+hid/hid-input.c:	input = field->hidinput->input;
+hid/hid-input.c:	if (usage->type == EV_KEY && !!test_bit(usage->code, input->key) != value)
+hid/hid-input.c:		input_sync(hidinput->input);
+hid/hid-input.c:				hidinput->input = input_dev;
+hid/hid-input.c:				list_add_tail(&hidinput->list, &hid->inputs);
+hid/hid-input.c:				hidinput->report = report;
+hid/hid-input.c:				if (input_register_device(hidinput->input))
+hid/hid-input.c:	if (hidinput && input_register_device(hidinput->input))
+hid/hid-input.c:	list_del(&hidinput->list);
+hid/hid-input.c:	input_free_device(hidinput->input);
+hid/hid-input.c:		list_del(&hidinput->list);
+hid/hid-input.c:		input_unregister_device(hidinput->input);
+hid/hid-magicmouse.c:	int last_state = test_bit(BTN_LEFT, msc->input->key) << 0 |
+hid/hid-magicmouse.c:		test_bit(BTN_RIGHT, msc->input->key) << 1 |
+hid/hid-magicmouse.c:		test_bit(BTN_MIDDLE, msc->input->key) << 2;
+hid/hid-magicmouse.c:	if (input->id.product == USB_DEVICE_ID_APPLE_MAGICMOUSE) {
+hid/hid-magicmouse.c:			if (input->id.product == USB_DEVICE_ID_APPLE_MAGICMOUSE)
+hid/hid-magicmouse.c:	if (input->id.product == USB_DEVICE_ID_APPLE_MAGICMOUSE) {
+hid/hid-magicmouse.c:	__set_bit(EV_KEY, input->evbit);
+hid/hid-magicmouse.c:	if (input->id.product == USB_DEVICE_ID_APPLE_MAGICMOUSE) {
+hid/hid-magicmouse.c:		__set_bit(BTN_LEFT, input->keybit);
+hid/hid-magicmouse.c:		__set_bit(BTN_RIGHT, input->keybit);
+hid/hid-magicmouse.c:			__set_bit(BTN_MIDDLE, input->keybit);
+hid/hid-magicmouse.c:		__set_bit(EV_REL, input->evbit);
+hid/hid-magicmouse.c:		__set_bit(REL_X, input->relbit);
+hid/hid-magicmouse.c:		__set_bit(REL_Y, input->relbit);
+hid/hid-magicmouse.c:			__set_bit(REL_WHEEL, input->relbit);
+hid/hid-magicmouse.c:			__set_bit(REL_HWHEEL, input->relbit);
+hid/hid-magicmouse.c:		/* input->keybit is initialized with incorrect button info
+hid/hid-magicmouse.c:		__clear_bit(BTN_RIGHT, input->keybit);
+hid/hid-magicmouse.c:		__clear_bit(BTN_MIDDLE, input->keybit);
+hid/hid-magicmouse.c:		__set_bit(BTN_MOUSE, input->keybit);
+hid/hid-magicmouse.c:		__set_bit(BTN_TOOL_FINGER, input->keybit);
+hid/hid-magicmouse.c:		__set_bit(BTN_TOOL_DOUBLETAP, input->keybit);
+hid/hid-magicmouse.c:		__set_bit(BTN_TOOL_TRIPLETAP, input->keybit);
+hid/hid-magicmouse.c:		__set_bit(BTN_TOOL_QUADTAP, input->keybit);
+hid/hid-magicmouse.c:		__set_bit(BTN_TOUCH, input->keybit);
+hid/hid-magicmouse.c:		__set_bit(EV_ABS, input->evbit);
+hid/hid-magicmouse.c:		if (input->id.product == USB_DEVICE_ID_APPLE_MAGICMOUSE) {
+hid/hid-magicmouse.c:		__set_bit(EV_MSC, input->evbit);
+hid/hid-magicmouse.c:		__set_bit(MSC_RAW, input->mscbit);
+hid/hid-magicmouse.c:	if (hi->input->id.product == USB_DEVICE_ID_APPLE_MAGICTRACKPAD &&
+hid/hid-gyration.c:	set_bit(EV_REP, hi->input->evbit);
+hid/hid-gyration.c:		struct input_dev *input = field->hidinput->input;
+hid/hid-quanta.c:		struct input_dev *input = field->hidinput->input;
+hid/hid-emsff.c:	struct input_dev *dev = hidinput->input;
+hid/hid-wacom.c:	input = hidinput->input;
+hid/hid-wacom.c:	__set_bit(INPUT_PROP_POINTER, input->propbit);
+hid/hid-wacom.c:	input->evbit[0] |= BIT(EV_KEY) | BIT(EV_ABS) | BIT(EV_REL);
+hid/hid-wacom.c:	__set_bit(REL_WHEEL, input->relbit);
+hid/hid-wacom.c:	__set_bit(BTN_TOOL_PEN, input->keybit);
+hid/hid-wacom.c:	__set_bit(BTN_TOUCH, input->keybit);
+hid/hid-wacom.c:	__set_bit(BTN_STYLUS, input->keybit);
+hid/hid-wacom.c:	__set_bit(BTN_STYLUS2, input->keybit);
+hid/hid-wacom.c:	__set_bit(BTN_LEFT, input->keybit);
+hid/hid-wacom.c:	__set_bit(BTN_RIGHT, input->keybit);
+hid/hid-wacom.c:	__set_bit(BTN_MIDDLE, input->keybit);
+hid/hid-wacom.c:	input->evbit[0] |= BIT(EV_MSC);
+hid/hid-wacom.c:	__set_bit(MSC_SERIAL, input->mscbit);
+hid/hid-wacom.c:	__set_bit(BTN_0, input->keybit);
+hid/hid-wacom.c:	__set_bit(BTN_1, input->keybit);
+hid/hid-wacom.c:	__set_bit(BTN_TOOL_FINGER, input->keybit);
+hid/hid-wacom.c:	__set_bit(BTN_TOOL_RUBBER, input->keybit);
+hid/hid-wacom.c:	__set_bit(BTN_TOOL_MOUSE, input->keybit);
+hid/hid-lg4ff.c:	struct input_dev *dev = hidinput->input;
+hid/hid-multitouch.c:		set_bit(INPUT_PROP_DIRECT, hi->input->propbit);
+hid/hid-multitouch.c:		set_bit(INPUT_PROP_POINTER, hi->input->propbit);
+hid/hid-multitouch.c:		/* we do not want to map these: no input-oriented meaning */
+hid/hid-multitouch.c:		set_bit(usage->type, hi->input->evbit);
+hid/hid-multitouch.c:			mt_emit_event(td, field->hidinput->input);
+hid/hid-tmff.c:	struct input_dev *input_dev = hidinput->input;
+hid/usbhid/hid-pidff.c:	struct input_dev *dev = hidinput->input;
+hid/hid-lgff.c:	struct input_dev *dev = hidinput->input;
+hid/hid-apple.c:				test_bit(LED_NUML, input->led))) {
+hid/hid-apple.c:		input_event(field->hidinput->input, usage->type, usage->code,
+hid/hid-apple.c:			hidinput_apple_event(hdev, field->hidinput->input,
+hid/hid-apple.c:	set_bit(KEY_NUMLOCK, input->keybit);
+hid/hid-apple.c:		set_bit(trans->to, input->keybit);
+hid/hid-apple.c:		set_bit(trans->to, input->keybit);
+hid/hid-apple.c:		set_bit(trans->to, input->keybit);
+hid/hid-apple.c:		set_bit(trans->to, input->keybit);
+hid/hid-apple.c:		set_bit(EV_REP, hi->input->evbit);
+hid/hid-holtekff.c:	struct input_dev *dev = hidinput->input;
+hid/hid-ntrig.c:		/* we do not want to map these: no input-oriented meaning */
+hid/hid-ntrig.c:	if(!(field->hidinput && field->hidinput->input))
+hid/hid-ntrig.c:	input = field->hidinput->input;
+hid/hid-ntrig.c:		input_mt_sync(field->hidinput->input);
+hid/hid-ntrig.c:		if (hidinput->report->maxfield < 1)
+hid/hid-ntrig.c:		input = hidinput->input;
+hid/hid-ntrig.c:		switch (hidinput->report->field[0]->application) {
+hid/hid-ntrig.c:			input->name = "N-Trig Pen";
+hid/hid-ntrig.c:			__clear_bit(BTN_TOOL_PEN, input->keybit);
+hid/hid-ntrig.c:			__clear_bit(BTN_TOOL_FINGER, input->keybit);
+hid/hid-ntrig.c:			__clear_bit(BTN_0, input->keybit);
+hid/hid-ntrig.c:			__set_bit(BTN_TOOL_DOUBLETAP, input->keybit);
+hid/hid-ntrig.c:			input->name =
+hid/hid-ntrig.c:				(hidinput->report->field[0]
+hid/hid-axff.c:	struct input_dev *dev = hidinput->input;
+hid/hid-chicony.c:	set_bit(EV_REP, hi->input->evbit);
+hid/hid-zpff.c:	struct input_dev *dev = hidinput->input;
+hid/hid-gaff.c:	struct input_dev *dev = hidinput->input;
+hid/hid-wiimote.c:	wdata->input->open = wiimote_input_open;
+hid/hid-wiimote.c:	wdata->input->close = wiimote_input_close;
+hid/hid-wiimote.c:	wdata->input->dev.parent = &wdata->hdev->dev;
+hid/hid-wiimote.c:	wdata->input->id.bustype = wdata->hdev->bus;
+hid/hid-wiimote.c:	wdata->input->id.vendor = wdata->hdev->vendor;
+hid/hid-wiimote.c:	wdata->input->id.product = wdata->hdev->product;
+hid/hid-wiimote.c:	wdata->input->id.version = wdata->hdev->version;
+hid/hid-wiimote.c:	wdata->input->name = WIIMOTE_NAME;
+hid/hid-wiimote.c:	set_bit(EV_KEY, wdata->input->evbit);
+hid/hid-wiimote.c:		set_bit(wiiproto_keymap[i], wdata->input->keybit);
+hid/hid-wiimote.c:	set_bit(FF_RUMBLE, wdata->input->ffbit);
+hid/hid-lg3ff.c:	struct input_dev *dev = hidinput->input;
+hid/hid-sjoy.c:		dev = hidinput->input;
+hwmon/applesmc.c:#include <linux/input-polldev.h>
+i2c/busses/Kconfig:	  of the input-utils package.
+id.bustype:acpi/video.c:	input->name = acpi_device_name(video->device);
+id.bustype:acpi/video.c:	input->phys = video->phys;
+id.bustype:acpi/video.c:	input->id.bustype = BUS_HOST;
+id.bustype:acpi/video.c:	input->id.product = 0x06;
+id.bustype:acpi/video.c:	input->dev.parent = &device->dev;
+id.bustype:acpi/video.c:	input->evbit[0] = BIT(EV_KEY);
+id.bustype:acpi/video.c:	set_bit(KEY_SWITCHVIDEOMODE, input->keybit);
+id.bustype:acpi/video.c:	set_bit(KEY_VIDEO_NEXT, input->keybit);
+id.bustype:acpi/video.c:	set_bit(KEY_VIDEO_PREV, input->keybit);
+id.bustype:acpi/video.c:	set_bit(KEY_BRIGHTNESS_CYCLE, input->keybit);
+id.bustype:acpi/video.c:	set_bit(KEY_BRIGHTNESSUP, input->keybit);
+id.bustype:acpi/video.c:	set_bit(KEY_BRIGHTNESSDOWN, input->keybit);
+id.bustype:acpi/video.c:	set_bit(KEY_BRIGHTNESS_ZERO, input->keybit);
+id.bustype:acpi/video.c:	set_bit(KEY_DISPLAY_OFF, input->keybit);
+id.bustype:acpi/button.c:			int keycode = test_bit(KEY_SLEEP, input->keybit) ?
+id.bustype:acpi/button.c:	input->name = name;
+id.bustype:acpi/button.c:	input->phys = button->phys;
+id.bustype:acpi/button.c:	input->id.bustype = BUS_HOST;
+id.bustype:acpi/button.c:	input->id.product = button->type;
+id.bustype:acpi/button.c:	input->dev.parent = &device->dev;
+id.bustype:acpi/button.c:		input->evbit[0] = BIT_MASK(EV_KEY);
+id.bustype:acpi/button.c:		set_bit(KEY_POWER, input->keybit);
+id.bustype:acpi/button.c:		input->evbit[0] = BIT_MASK(EV_KEY);
+id.bustype:acpi/button.c:		set_bit(KEY_SLEEP, input->keybit);
+id.bustype:acpi/button.c:		input->evbit[0] = BIT_MASK(EV_SW);
+id.bustype:acpi/button.c:		set_bit(SW_LID, input->swbit);
+id.bustype:cbus/retu-pwrbutton.c: * Driver for sending retu power button event to input-layer
+id.bustype:gpu/drm/i915/intel_tv.c:		unsigned int hactive_s = input->w;
+id.bustype:gpu/drm/i915/intel_tv.c:		unsigned int vactive_s = input->h;
+id.bustype:gpu/drm/i915/intel_tv.c:		if (tv_mode->max_srcw && input->w > tv_mode->max_srcw)
+id.bustype:gpu/drm/i915/intel_tv.c:		if (input->w > 1024 && (!tv_mode->progressive
+id.bustype:gpu/drm/i915/intel_tv.c:		strncpy(mode_ptr->name, input->name, DRM_DISPLAY_MODE_LEN);
+id.bustype:hid/hid-ezkey.c:		struct input_dev *input = field->hidinput->input;
+id.bustype:hid/hid-microsoft.c:		set_bit(EV_REP, input->evbit);
+id.bustype:hid/hid-microsoft.c:		set_bit(KEY_F14, input->keybit);
+id.bustype:hid/hid-microsoft.c:		set_bit(KEY_F15, input->keybit);
+id.bustype:hid/hid-microsoft.c:		set_bit(KEY_F16, input->keybit);
+id.bustype:hid/hid-microsoft.c:		set_bit(KEY_F17, input->keybit);
+id.bustype:hid/hid-microsoft.c:		set_bit(KEY_F18, input->keybit);
+id.bustype:hid/hid-microsoft.c:	set_bit(EV_REP, hi->input->evbit);
+id.bustype:hid/hid-microsoft.c:		struct input_dev *input = field->hidinput->input;
+id.bustype:hid/hid-cypress.c:		struct input_dev *input = field->hidinput->input;
+id.bustype:hid/hid-dr.c:	struct input_dev *dev = hidinput->input;
+id.bustype:hid/hid-pl.c:		dev = hidinput->input;
+id.bustype:hid/hid-a4tech.c:	input = field->hidinput->input;
+id.bustype:hid/hid-lg2ff.c:	struct input_dev *dev = hidinput->input;
+id.bustype:hid/hid-lg.c:	set_bit(EV_REP, hi->input->evbit);
+id.bustype:hid/hid-lg.c:		input_event(field->hidinput->input, usage->type, usage->code,
+id.bustype:hid/hid-core.c:			if (hidinput->input->key[i])
+id.bustype:hid/hid-input.c:	struct input_dev *input = hidinput->input;
+id.bustype:hid/hid-input.c:		set_bit(EV_REP, input->evbit);
+id.bustype:hid/hid-input.c:			if (!test_bit(BTN_TOUCH, input->keybit)) {
+id.bustype:hid/hid-input.c:				set_bit(EV_KEY, input->evbit);
+id.bustype:hid/hid-input.c:				set_bit(BTN_TOUCH, input->keybit);
+id.bustype:hid/hid-input.c:		set_bit(EV_REP, input->evbit);
+id.bustype:hid/hid-input.c:		set_bit(EV_REP, input->evbit);
+id.bustype:hid/hid-input.c:	set_bit(usage->type, input->evbit);
+id.bustype:hid/hid-input.c:		if (usage->code == ABS_MT_POSITION_X && input->hint_events_per_packet == 0)
+id.bustype:hid/hid-input.c:			set_bit(i, input->absbit);
+id.bustype:hid/hid-input.c:		set_bit(KEY_VOLUMEUP, input->keybit);
+id.bustype:hid/hid-input.c:		set_bit(KEY_VOLUMEDOWN, input->keybit);
+id.bustype:hid/hid-input.c:		set_bit(EV_MSC, input->evbit);
+id.bustype:hid/hid-input.c:		set_bit(MSC_SCAN, input->mscbit);
+id.bustype:hid/hid-input.c:	input = field->hidinput->input;
+id.bustype:hid/hid-input.c:	if (usage->type == EV_KEY && !!test_bit(usage->code, input->key) != value)
+id.bustype:hid/hid-input.c:		input_sync(hidinput->input);
+id.bustype:hid/hid-input.c:				hidinput->input = input_dev;
+id.bustype:hid/hid-input.c:				list_add_tail(&hidinput->list, &hid->inputs);
+id.bustype:hid/hid-input.c:				hidinput->report = report;
+id.bustype:hid/hid-input.c:				if (input_register_device(hidinput->input))
+id.bustype:hid/hid-input.c:	if (hidinput && input_register_device(hidinput->input))
+id.bustype:hid/hid-input.c:	list_del(&hidinput->list);
+input/.input-core.o.cmd:cmd_drivers/input/input-core.o := arm-arago-linux-gnueabi-ld -EL    -r -o drivers/input/input-core.o drivers/input/input.o drivers/input/input-compat.o drivers/input/input-mt.o drivers/input/ff-core.o 
+input/input-polldev.c:#include <linux/input-polldev.h>
+input/input-polldev.c:	mutex_lock(&input->mutex);
+input/input-polldev.c:	if (input->users) {
+input/input-polldev.c:	mutex_unlock(&input->mutex);
+input/input-polldev.c:	input->open = input_open_polled_device;
+input/input-polldev.c:	input->close = input_close_polled_device;
+input/input-polldev.c:	error = sysfs_create_group(&input->dev.kobj,
+input/input-polldev.c:	sysfs_remove_group(&dev->input->dev.kobj,
+input/.evdev.o.cmd:  drivers/input/input-compat.h \
+Binary file input/input-mt.o matches
+input/.input-polldev.o.cmd:cmd_drivers/input/input-polldev.o := arm-arago-linux-gnueabi-gcc -Wp,-MD,drivers/input/.input-polldev.o.d  -nostdinc -isystem /home/arasi/am335x/ti-sdk-am335x-evm-05.04.01.00/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/include -I/home/arasi/am335x/ti-sdk-am335x-evm-05.04.01.00/board-support/linux-3.2-psp04.06.00.07.sdk/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include /home/arasi/am335x/ti-sdk-am335x-evm-05.04.01.00/board-support/linux-3.2-psp04.06.00.07.sdk/include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-omap2/include -Iarch/arm/plat-omap/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -marm -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(input_polldev)"  -D"KBUILD_MODNAME=KBUILD_STR(input_polldev)" -c -o drivers/input/.tmp_input-polldev.o drivers/input/input-polldev.c
+input/.input-polldev.o.cmd:source_drivers/input/input-polldev.o := drivers/input/input-polldev.c
+input/.input-polldev.o.cmd:deps_drivers/input/input-polldev.o := \
+input/.input-polldev.o.cmd:  include/linux/input-polldev.h \
+input/.input-polldev.o.cmd:drivers/input/input-polldev.o: $(deps_drivers/input/input-polldev.o)
+input/.input-polldev.o.cmd:$(deps_drivers/input/input-polldev.o):
+Binary file input/input-core.o matches
+input/.input.o.cmd:  drivers/input/input-compat.h \
+input/.input-mt.o.cmd:cmd_drivers/input/input-mt.o := arm-arago-linux-gnueabi-gcc -Wp,-MD,drivers/input/.input-mt.o.d  -nostdinc -isystem /home/arasi/am335x/ti-sdk-am335x-evm-05.04.01.00/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/include -I/home/arasi/am335x/ti-sdk-am335x-evm-05.04.01.00/board-support/linux-3.2-psp04.06.00.07.sdk/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include /home/arasi/am335x/ti-sdk-am335x-evm-05.04.01.00/board-support/linux-3.2-psp04.06.00.07.sdk/include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-omap2/include -Iarch/arm/plat-omap/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -marm -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(input_mt)"  -D"KBUILD_MODNAME=KBUILD_STR(input_core)" -c -o drivers/input/.tmp_input-mt.o drivers/input/input-mt.c
+input/.input-mt.o.cmd:source_drivers/input/input-mt.o := drivers/input/input-mt.c
+input/.input-mt.o.cmd:deps_drivers/input/input-mt.o := \
+input/.input-mt.o.cmd:drivers/input/input-mt.o: $(deps_drivers/input/input-mt.o)
+input/.input-mt.o.cmd:$(deps_drivers/input/input-mt.o):
+input/touchscreen/pcap_ts.c:		dev_warn(&pcap_ts->input->dev,
+input/touchscreen/intel-mid-touch.c:	input->name = "mrst_touchscreen";
+input/touchscreen/intel-mid-touch.c:	input->phys = tsdev->phys;
+input/touchscreen/intel-mid-touch.c:	input->dev.parent = tsdev->dev;
+input/touchscreen/intel-mid-touch.c:	input->id.vendor = tsdev->vendor;
+input/touchscreen/intel-mid-touch.c:	input->id.version = tsdev->rev;
+input/touchscreen/intel-mid-touch.c:	input->evbit[0] = BIT_MASK(EV_KEY) | BIT_MASK(EV_ABS);
+input/touchscreen/intel-mid-touch.c:	input->keybit[BIT_WORD(BTN_TOUCH)] = BIT_MASK(BTN_TOUCH);
+input/touchscreen/migor_ts.c:	input->evbit[0] = BIT_MASK(EV_KEY) | BIT_MASK(EV_ABS);
+input/touchscreen/migor_ts.c:	input->keybit[BIT_WORD(BTN_TOUCH)] = BIT_MASK(BTN_TOUCH);
+input/touchscreen/migor_ts.c:	input->name = client->name;
+input/touchscreen/migor_ts.c:	input->id.bustype = BUS_I2C;
+input/touchscreen/migor_ts.c:	input->dev.parent = &client->dev;
+input/touchscreen/migor_ts.c:	input->open = migor_ts_open;
+input/touchscreen/migor_ts.c:	input->close = migor_ts_close;
+input/touchscreen/tsc2005.c:		 "%s/input-ts", dev_name(&spi->dev));
+input/touchscreen/ad7879.c:	bool			disabled;	/* P: input->mutex */
+input/touchscreen/ad7879.c:	bool			suspended;	/* P: input->mutex */
+input/touchscreen/ad7879.c:	/* protected by input->mutex */
+input/touchscreen/ad7879.c:	/* protected by input->mutex */
+input/touchscreen/ad7879.c:	mutex_lock(&ts->input->mutex);
+input/touchscreen/ad7879.c:	if (!ts->suspended && !ts->disabled && ts->input->users)
+input/touchscreen/ad7879.c:	mutex_unlock(&ts->input->mutex);
+input/touchscreen/ad7879.c:	mutex_lock(&ts->input->mutex);
+input/touchscreen/ad7879.c:	if (ts->suspended && !ts->disabled && ts->input->users)
+input/touchscreen/ad7879.c:	mutex_unlock(&ts->input->mutex);
+input/touchscreen/ad7879.c:	mutex_lock(&ts->input->mutex);
+input/touchscreen/ad7879.c:	if (!ts->suspended && ts->input->users != 0) {
+input/touchscreen/ad7879.c:	mutex_unlock(&ts->input->mutex);
+input/touchscreen/wm97xx-core.c: * Documentation/input/input-programming.txt for more details.
+input/touchscreen/s3c2410_ts.c:	ts.input->evbit[0] = BIT_MASK(EV_KEY) | BIT_MASK(EV_ABS);
+input/touchscreen/s3c2410_ts.c:	ts.input->keybit[BIT_WORD(BTN_TOUCH)] = BIT_MASK(BTN_TOUCH);
+input/touchscreen/s3c2410_ts.c:	ts.input->name = "S3C24XX TouchScreen";
+input/touchscreen/s3c2410_ts.c:	ts.input->id.bustype = BUS_HOST;
+input/touchscreen/s3c2410_ts.c:	ts.input->id.vendor = 0xDEAD;
+input/touchscreen/s3c2410_ts.c:	ts.input->id.product = 0xBEEF;
+input/touchscreen/s3c2410_ts.c:	ts.input->id.version = 0x0102;
+input/touchscreen/usbtouchscreen.c:	mutex_lock(&input->mutex);
+input/touchscreen/usbtouchscreen.c:	if (input->users || usbtouch->type->irq_always)
+input/touchscreen/usbtouchscreen.c:	mutex_unlock(&input->mutex);
+input/touchscreen/usbtouchscreen.c:	mutex_lock(&input->mutex);
+input/touchscreen/usbtouchscreen.c:	if (input->users)
+input/touchscreen/usbtouchscreen.c:	mutex_unlock(&input->mutex);
+input/touchscreen/lpc32xx_ts.c:	input->name = MOD_NAME;
+input/touchscreen/lpc32xx_ts.c:	input->phys = "lpc32xx/input0";
+input/touchscreen/lpc32xx_ts.c:	input->id.bustype = BUS_HOST;
+input/touchscreen/lpc32xx_ts.c:	input->id.vendor = 0x0001;
+input/touchscreen/lpc32xx_ts.c:	input->id.product = 0x0002;
+input/touchscreen/lpc32xx_ts.c:	input->id.version = 0x0100;
+input/touchscreen/lpc32xx_ts.c:	input->dev.parent = &pdev->dev;
+input/touchscreen/lpc32xx_ts.c:	input->open = lpc32xx_ts_open;
+input/touchscreen/lpc32xx_ts.c:	input->close = lpc32xx_ts_close;
+input/touchscreen/lpc32xx_ts.c:	input->evbit[0] = BIT_MASK(EV_KEY) | BIT_MASK(EV_ABS);
+input/touchscreen/lpc32xx_ts.c:	input->keybit[BIT_WORD(BTN_TOUCH)] = BIT_MASK(BTN_TOUCH);
+input/touchscreen/lpc32xx_ts.c:	mutex_lock(&input->mutex);
+input/touchscreen/lpc32xx_ts.c:	if (input->users) {
+input/touchscreen/lpc32xx_ts.c:	mutex_unlock(&input->mutex);
+input/touchscreen/lpc32xx_ts.c:	mutex_lock(&input->mutex);
+input/touchscreen/lpc32xx_ts.c:	if (input->users) {
+input/touchscreen/lpc32xx_ts.c:	mutex_unlock(&input->mutex);
+input/touchscreen/eeti_ts.c:	input->evbit[0] = BIT_MASK(EV_KEY) | BIT_MASK(EV_ABS);
+input/touchscreen/eeti_ts.c:	input->keybit[BIT_WORD(BTN_TOUCH)] = BIT_MASK(BTN_TOUCH);
+input/touchscreen/eeti_ts.c:	input->name = client->name;
+input/touchscreen/eeti_ts.c:	input->id.bustype = BUS_I2C;
+input/touchscreen/eeti_ts.c:	input->dev.parent = &client->dev;
+input/touchscreen/eeti_ts.c:	input->open = eeti_ts_open;
+input/touchscreen/eeti_ts.c:	input->close = eeti_ts_close;
+input/Kconfig:	  module will be called input-polldev.
+input/input-compat.c:#include "input-compat.h"
+input/keyboard/bf54x-keys.c:	for (i = 0; i < input->keycodemax; i++)
+input/keyboard/bf54x-keys.c:		if (bf54x_kpad->keycode[i + input->keycodemax] == keyident)
+input/keyboard/bf54x-keys.c:	input->name = pdev->name;
+input/keyboard/bf54x-keys.c:	input->phys = "bf54x-keys/input0";
+input/keyboard/bf54x-keys.c:	input->dev.parent = &pdev->dev;
+input/keyboard/bf54x-keys.c:	input->id.bustype = BUS_HOST;
+input/keyboard/bf54x-keys.c:	input->id.vendor = 0x0001;
+input/keyboard/bf54x-keys.c:	input->id.product = 0x0001;
+input/keyboard/bf54x-keys.c:	input->id.version = 0x0100;
+input/keyboard/bf54x-keys.c:	input->keycodesize = sizeof(unsigned short);
+input/keyboard/bf54x-keys.c:	input->keycodemax = pdata->keymapsize;
+input/keyboard/bf54x-keys.c:	input->keycode = bf54x_kpad->keycode;
+input/keyboard/bf54x-keys.c:	__set_bit(EV_KEY, input->evbit);
+input/keyboard/bf54x-keys.c:		__set_bit(EV_REP, input->evbit);
+input/keyboard/bf54x-keys.c:	for (i = 0; i < input->keycodemax; i++)
+input/keyboard/bf54x-keys.c:		__set_bit(bf54x_kpad->keycode[i] & KEY_MAX, input->keybit);
+input/keyboard/bf54x-keys.c:	__clear_bit(KEY_RESERVED, input->keybit);
+input/keyboard/adp5589-keys.c:	input->name = client->name;
+input/keyboard/adp5589-keys.c:	input->phys = "adp5589-keys/input0";
+input/keyboard/adp5589-keys.c:	input->dev.parent = &client->dev;
+input/keyboard/adp5589-keys.c:	input->id.bustype = BUS_I2C;
+input/keyboard/adp5589-keys.c:	input->id.vendor = 0x0001;
+input/keyboard/adp5589-keys.c:	input->id.product = 0x0001;
+input/keyboard/adp5589-keys.c:	input->id.version = revid;
+input/keyboard/adp5589-keys.c:	input->keycodesize = sizeof(kpad->keycode[0]);
+input/keyboard/adp5589-keys.c:	input->keycodemax = pdata->keymapsize;
+input/keyboard/adp5589-keys.c:	input->keycode = kpad->keycode;
+input/keyboard/adp5589-keys.c:	       pdata->keymapsize * input->keycodesize);
+input/keyboard/adp5589-keys.c:	__set_bit(EV_KEY, input->evbit);
+input/keyboard/adp5589-keys.c:		__set_bit(EV_REP, input->evbit);
+input/keyboard/adp5589-keys.c:	for (i = 0; i < input->keycodemax; i++)
+input/keyboard/adp5589-keys.c:		__set_bit(kpad->keycode[i] & KEY_MAX, input->keybit);
+input/keyboard/adp5589-keys.c:	__clear_bit(KEY_RESERVED, input->keybit);
+input/keyboard/adp5589-keys.c:		__set_bit(EV_SW, input->evbit);
+input/keyboard/adp5589-keys.c:		__set_bit(kpad->gpimap[i].sw_evt, input->swbit);
+input/keyboard/omap-keypad.c:	unsigned short *keycodes = omap_kp_data->input->keycode;
+input/keyboard/tca8418_keypad.c:	input->name = client->name;
+input/keyboard/tca8418_keypad.c:	input->dev.parent = &client->dev;
+input/keyboard/tca8418_keypad.c:	input->id.bustype = BUS_I2C;
+input/keyboard/tca8418_keypad.c:	input->id.vendor  = 0x0001;
+input/keyboard/tca8418_keypad.c:	input->id.product = 0x001;
+input/keyboard/tca8418_keypad.c:	input->id.version = 0x0001;
+input/keyboard/tca8418_keypad.c:	input->keycode     = keypad_data->keymap;
+input/keyboard/tca8418_keypad.c:	input->keycodesize = sizeof(keypad_data->keymap[0]);
+input/keyboard/tca8418_keypad.c:	input->keycodemax  = max_keys;
+input/keyboard/tca8418_keypad.c:	__set_bit(EV_KEY, input->evbit);
+input/keyboard/tca8418_keypad.c:		__set_bit(EV_REP, input->evbit);
+input/keyboard/tca8418_keypad.c:			input->keycode, input->keybit);
+input/keyboard/qt2160.c:	input->name = "AT42QT2160 Touch Sense Keyboard";
+input/keyboard/qt2160.c:	input->id.bustype = BUS_I2C;
+input/keyboard/qt2160.c:	input->keycode = qt2160->keycodes;
+input/keyboard/qt2160.c:	input->keycodesize = sizeof(qt2160->keycodes[0]);
+input/keyboard/qt2160.c:	input->keycodemax = ARRAY_SIZE(qt2160_key2code);
+input/keyboard/qt2160.c:	__set_bit(EV_KEY, input->evbit);
+input/keyboard/qt2160.c:	__clear_bit(EV_REP, input->evbit);
+input/keyboard/qt2160.c:		__set_bit(qt2160_key2code[i], input->keybit);
+input/keyboard/qt2160.c:	__clear_bit(KEY_RESERVED, input->keybit);
+input/keyboard/gpio_keys_polled.c:#include <linux/input-polldev.h>
+input/keyboard/gpio_keys_polled.c:	input->evbit[0] = BIT(EV_KEY);
+input/keyboard/gpio_keys_polled.c:	input->name = pdev->name;
+input/keyboard/gpio_keys_polled.c:	input->phys = DRV_NAME"/input0";
+input/keyboard/gpio_keys_polled.c:	input->dev.parent = &pdev->dev;
+input/keyboard/gpio_keys_polled.c:	input->id.bustype = BUS_HOST;
+input/keyboard/gpio_keys_polled.c:	input->id.vendor = 0x0001;
+input/keyboard/gpio_keys_polled.c:	input->id.product = 0x0001;
+input/keyboard/gpio_keys_polled.c:	input->id.version = 0x0100;
+input/keyboard/jornada680_kbd.c:#include <linux/input-polldev.h>
+input/keyboard/adp5520-keys.c:	input->name = pdev->name;
+input/keyboard/adp5520-keys.c:	input->phys = "adp5520-keys/input0";
+input/keyboard/adp5520-keys.c:	input->dev.parent = &pdev->dev;
+input/keyboard/adp5520-keys.c:	input->id.bustype = BUS_I2C;
+input/keyboard/adp5520-keys.c:	input->id.vendor = 0x0001;
+input/keyboard/adp5520-keys.c:	input->id.product = 0x5520;
+input/keyboard/adp5520-keys.c:	input->id.version = 0x0001;
+input/keyboard/adp5520-keys.c:	input->keycodesize = sizeof(dev->keycode[0]);
+input/keyboard/adp5520-keys.c:	input->keycodemax = pdata->keymapsize;
+input/keyboard/adp5520-keys.c:	input->keycode = dev->keycode;
+input/keyboard/adp5520-keys.c:		pdata->keymapsize * input->keycodesize);
+input/keyboard/adp5520-keys.c:	__set_bit(EV_KEY, input->evbit);
+input/keyboard/adp5520-keys.c:		__set_bit(EV_REP, input->evbit);
+input/keyboard/adp5520-keys.c:	for (i = 0; i < input->keycodemax; i++)
+input/keyboard/adp5520-keys.c:		__set_bit(dev->keycode[i], input->keybit);
+input/keyboard/adp5520-keys.c:	__clear_bit(KEY_RESERVED, input->keybit);
+input/keyboard/atkbd.c: * input-only controllers and AT keyboards connected over a one way RS232
+input/keyboard/davinci_keyscan.c:	struct device *dev = &davinci_ks->input->dev;
+input/keyboard/davinci_keyscan.c:	struct device *dev = &davinci_ks->input->dev;
+input/keyboard/gpio_keys.c:	return ddata->enable ? ddata->enable(input->dev.parent) : 0;
+input/keyboard/gpio_keys.c:		ddata->disable(input->dev.parent);
+input/keyboard/gpio_keys.c:		if (of_property_read_u32(pp, "linux,input-type", &reg) == 0)
+input/keyboard/gpio_keys.c:	input->name = pdata->name ? : pdev->name;
+input/keyboard/gpio_keys.c:	input->phys = "gpio-keys/input0";
+input/keyboard/gpio_keys.c:	input->dev.parent = &pdev->dev;
+input/keyboard/gpio_keys.c:	input->open = gpio_keys_open;
+input/keyboard/gpio_keys.c:	input->close = gpio_keys_close;
+input/keyboard/gpio_keys.c:	input->id.bustype = BUS_HOST;
+input/keyboard/gpio_keys.c:	input->id.vendor = 0x0001;
+input/keyboard/gpio_keys.c:	input->id.product = 0x0001;
+input/keyboard/gpio_keys.c:	input->id.version = 0x0100;
+input/keyboard/gpio_keys.c:		__set_bit(EV_REP, input->evbit);
+input/keyboard/lm8323.c:		 "%s/input-kp", dev_name(&client->dev));
+input/keyboard/tca6416-keypad.c:	input->phys = "tca6416-keys/input0";
+input/keyboard/tca6416-keypad.c:	input->name = client->name;
+input/keyboard/tca6416-keypad.c:	input->dev.parent = &client->dev;
+input/keyboard/tca6416-keypad.c:	input->open = tca6416_keys_open;
+input/keyboard/tca6416-keypad.c:	input->close = tca6416_keys_close;
+input/keyboard/tca6416-keypad.c:	input->id.bustype = BUS_HOST;
+input/keyboard/tca6416-keypad.c:	input->id.vendor = 0x0001;
+input/keyboard/tca6416-keypad.c:	input->id.product = 0x0001;
+input/keyboard/tca6416-keypad.c:	input->id.version = 0x0100;
+input/keyboard/tca6416-keypad.c:		__set_bit(EV_REP, input->evbit);
+input/keyboard/qt1070.c:	input->name = "AT42QT1070 QTouch Sensor";
+input/keyboard/qt1070.c:	input->dev.parent = &client->dev;
+input/keyboard/qt1070.c:	input->id.bustype = BUS_I2C;
+input/keyboard/qt1070.c:	input->keycode = data->keycodes;
+input/keyboard/qt1070.c:	input->keycodesize = sizeof(data->keycodes[0]);
+input/keyboard/qt1070.c:	input->keycodemax = ARRAY_SIZE(qt1070_key2code);
+input/keyboard/qt1070.c:	__set_bit(EV_KEY, input->evbit);
+input/keyboard/qt1070.c:		__set_bit(qt1070_key2code[i], input->keybit);
+input/keyboard/omap4-keypad.c:	pm_runtime_get_sync(input->dev.parent);
+input/keyboard/omap4-keypad.c:	pm_runtime_put_sync(input->dev.parent);
+input/keyboard/tc3589x-keypad.c:		dev_err(&input->dev, "failed to enable keypad module\n");
+input/keyboard/tc3589x-keypad.c:		dev_err(&input->dev, "failed to configure keypad module\n");
+input/keyboard/tc3589x-keypad.c:	input->id.bustype = BUS_I2C;
+input/keyboard/tc3589x-keypad.c:	input->name = pdev->name;
+input/keyboard/tc3589x-keypad.c:	input->dev.parent = &pdev->dev;
+input/keyboard/tc3589x-keypad.c:	input->keycode = keypad->keymap;
+input/keyboard/tc3589x-keypad.c:	input->keycodesize = sizeof(keypad->keymap[0]);
+input/keyboard/tc3589x-keypad.c:	input->keycodemax = ARRAY_SIZE(keypad->keymap);
+input/keyboard/tc3589x-keypad.c:	input->open = tc3589x_keypad_open;
+input/keyboard/tc3589x-keypad.c:	input->close = tc3589x_keypad_close;
+input/keyboard/tc3589x-keypad.c:	__set_bit(EV_KEY, input->evbit);
+input/keyboard/tc3589x-keypad.c:		__set_bit(EV_REP, input->evbit);
+input/keyboard/tc3589x-keypad.c:			input->keycode, input->keybit);
+input/keyboard/opencores-kbd.c:	input->name = pdev->name;
+input/keyboard/opencores-kbd.c:	input->phys = "opencores-kbd/input0";
+input/keyboard/opencores-kbd.c:	input->dev.parent = &pdev->dev;
+input/keyboard/opencores-kbd.c:	input->id.bustype = BUS_HOST;
+input/keyboard/opencores-kbd.c:	input->id.vendor = 0x0001;
+input/keyboard/opencores-kbd.c:	input->id.product = 0x0001;
+input/keyboard/opencores-kbd.c:	input->id.version = 0x0100;
+input/keyboard/opencores-kbd.c:	input->keycode = opencores_kbd->keycodes;
+input/keyboard/opencores-kbd.c:	input->keycodesize = sizeof(opencores_kbd->keycodes[0]);
+input/keyboard/opencores-kbd.c:	input->keycodemax = ARRAY_SIZE(opencores_kbd->keycodes);
+input/keyboard/opencores-kbd.c:	__set_bit(EV_KEY, input->evbit);
+input/keyboard/opencores-kbd.c:		__set_bit(opencores_kbd->keycodes[i], input->keybit);
+input/keyboard/opencores-kbd.c:	__clear_bit(KEY_RESERVED, input->keybit);
+Binary file input/keyboard/built-in.o matches
+input/keyboard/adp5588-keys.c:	input->name = client->name;
+input/keyboard/adp5588-keys.c:	input->phys = "adp5588-keys/input0";
+input/keyboard/adp5588-keys.c:	input->dev.parent = &client->dev;
+input/keyboard/adp5588-keys.c:	input->id.bustype = BUS_I2C;
+input/keyboard/adp5588-keys.c:	input->id.vendor = 0x0001;
+input/keyboard/adp5588-keys.c:	input->id.product = 0x0001;
+input/keyboard/adp5588-keys.c:	input->id.version = revid;
+input/keyboard/adp5588-keys.c:	input->keycodesize = sizeof(kpad->keycode[0]);
+input/keyboard/adp5588-keys.c:	input->keycodemax = pdata->keymapsize;
+input/keyboard/adp5588-keys.c:	input->keycode = kpad->keycode;
+input/keyboard/adp5588-keys.c:		pdata->keymapsize * input->keycodesize);
+input/keyboard/adp5588-keys.c:	__set_bit(EV_KEY, input->evbit);
+input/keyboard/adp5588-keys.c:		__set_bit(EV_REP, input->evbit);
+input/keyboard/adp5588-keys.c:	for (i = 0; i < input->keycodemax; i++)
+input/keyboard/adp5588-keys.c:		__set_bit(kpad->keycode[i] & KEY_MAX, input->keybit);
+input/keyboard/adp5588-keys.c:	__clear_bit(KEY_RESERVED, input->keybit);
+input/keyboard/adp5588-keys.c:		__set_bit(EV_SW, input->evbit);
+input/keyboard/adp5588-keys.c:		__set_bit(kpad->gpimap[i].sw_evt, input->swbit);
+input/keyboard/nomadik-ske-keypad.c:	input->id.bustype = BUS_HOST;
+input/keyboard/nomadik-ske-keypad.c:	input->name = "ux500-ske-keypad";
+input/keyboard/nomadik-ske-keypad.c:	input->dev.parent = &pdev->dev;
+input/keyboard/nomadik-ske-keypad.c:	input->keycode = keypad->keymap;
+input/keyboard/nomadik-ske-keypad.c:	input->keycodesize = sizeof(keypad->keymap[0]);
+input/keyboard/nomadik-ske-keypad.c:	input->keycodemax = ARRAY_SIZE(keypad->keymap);
+input/keyboard/nomadik-ske-keypad.c:	__set_bit(EV_KEY, input->evbit);
+input/keyboard/nomadik-ske-keypad.c:		__set_bit(EV_REP, input->evbit);
+input/keyboard/nomadik-ske-keypad.c:			input->keycode, input->keybit);
+input/keyboard/sh_keysc.c:	input->evbit[0] = BIT_MASK(EV_KEY);
+input/keyboard/sh_keysc.c:	input->name = pdev->name;
+input/keyboard/sh_keysc.c:	input->phys = "sh-keysc-keys/input0";
+input/keyboard/sh_keysc.c:	input->dev.parent = &pdev->dev;
+input/keyboard/sh_keysc.c:	input->id.bustype = BUS_HOST;
+input/keyboard/sh_keysc.c:	input->id.vendor = 0x0001;
+input/keyboard/sh_keysc.c:	input->id.product = 0x0001;
+input/keyboard/sh_keysc.c:	input->id.version = 0x0100;
+input/keyboard/sh_keysc.c:	input->keycode = pdata->keycodes;
+input/keyboard/sh_keysc.c:	input->keycodesize = sizeof(pdata->keycodes[0]);
+input/keyboard/sh_keysc.c:	input->keycodemax = ARRAY_SIZE(pdata->keycodes);
+input/keyboard/sh_keysc.c:		__set_bit(pdata->keycodes[i], input->keybit);
+input/keyboard/sh_keysc.c:	__clear_bit(KEY_RESERVED, input->keybit);
+input/keyboard/pmic8xxx-keypad.c:	kp->input->name = pdata->input_name ? : "PMIC8XXX keypad";
+input/keyboard/pmic8xxx-keypad.c:	kp->input->phys = pdata->input_phys_device ? : "pmic8xxx_keypad/input0";
+input/keyboard/pmic8xxx-keypad.c:	kp->input->dev.parent	= &pdev->dev;
+input/keyboard/pmic8xxx-keypad.c:	kp->input->id.bustype	= BUS_I2C;
+input/keyboard/pmic8xxx-keypad.c:	kp->input->id.version	= 0x0001;
+input/keyboard/pmic8xxx-keypad.c:	kp->input->id.product	= 0x0001;
+input/keyboard/pmic8xxx-keypad.c:	kp->input->id.vendor	= 0x0001;
+input/keyboard/pmic8xxx-keypad.c:	kp->input->evbit[0]	= BIT_MASK(EV_KEY);
+input/keyboard/pmic8xxx-keypad.c:		__set_bit(EV_REP, kp->input->evbit);
+input/keyboard/pmic8xxx-keypad.c:	kp->input->keycode	= kp->keycodes;
+input/keyboard/pmic8xxx-keypad.c:	kp->input->keycodemax	= PM8XXX_MATRIX_MAX_SIZE;
+input/keyboard/pmic8xxx-keypad.c:	kp->input->keycodesize	= sizeof(kp->keycodes);
+input/keyboard/pmic8xxx-keypad.c:	kp->input->open		= pmic8xxx_kp_open;
+input/keyboard/pmic8xxx-keypad.c:	kp->input->close	= pmic8xxx_kp_close;
+input/keyboard/pmic8xxx-keypad.c:					kp->input->keycode, kp->input->keybit);
+input/keyboard/stmpe-keypad.c:	input->name = "STMPE keypad";
+input/keyboard/stmpe-keypad.c:	input->id.bustype = BUS_I2C;
+input/keyboard/stmpe-keypad.c:	input->dev.parent = &pdev->dev;
+input/keyboard/stmpe-keypad.c:	__set_bit(EV_KEY, input->evbit);
+input/keyboard/stmpe-keypad.c:		__set_bit(EV_REP, input->evbit);
+input/keyboard/stmpe-keypad.c:	input->keycode = keypad->keymap;
+input/keyboard/stmpe-keypad.c:	input->keycodesize = sizeof(keypad->keymap[0]);
+input/keyboard/stmpe-keypad.c:	input->keycodemax = ARRAY_SIZE(keypad->keymap);
+input/keyboard/stmpe-keypad.c:				   input->keycode, input->keybit);
+input/keyboard/twl4030_keypad.c:	__set_bit(EV_KEY, input->evbit);
+input/keyboard/twl4030_keypad.c:		__set_bit(EV_REP, input->evbit);
+input/keyboard/twl4030_keypad.c:	input->name		= "TWL4030 Keypad";
+input/keyboard/twl4030_keypad.c:	input->phys		= "twl4030_keypad/input0";
+input/keyboard/twl4030_keypad.c:	input->dev.parent	= &pdev->dev;
+input/keyboard/twl4030_keypad.c:	input->id.bustype	= BUS_HOST;
+input/keyboard/twl4030_keypad.c:	input->id.vendor	= 0x0001;
+input/keyboard/twl4030_keypad.c:	input->id.product	= 0x0001;
+input/keyboard/twl4030_keypad.c:	input->id.version	= 0x0003;
+input/keyboard/twl4030_keypad.c:	input->keycode		= kp->keymap;
+input/keyboard/twl4030_keypad.c:	input->keycodesize	= sizeof(kp->keymap[0]);
+input/keyboard/twl4030_keypad.c:	input->keycodemax	= ARRAY_SIZE(kp->keymap);
+input/keyboard/twl4030_keypad.c:				   input->keycode, input->keybit);
+Binary file input/keyboard/gpio_keys.o matches
+input/keyboard/matrix_keypad.c:	/* initialized as disabled - enabled by input->open */
+input/Makefile:obj-$(CONFIG_INPUT)		+= input-core.o
+input/Makefile:input-core-y := input.o input-compat.o input-mt.o ff-core.o
+input/Makefile:obj-$(CONFIG_INPUT_POLLDEV)	+= input-polldev.o
+Binary file input/input-polldev.o matches
+input/.built-in.o.cmd:cmd_drivers/input/built-in.o :=  arm-arago-linux-gnueabi-ld -EL    -r -o drivers/input/built-in.o drivers/input/input-core.o drivers/input/input-polldev.o drivers/input/mousedev.o drivers/input/evdev.o drivers/input/keyboard/built-in.o drivers/input/mouse/built-in.o drivers/input/touchscreen/built-in.o drivers/input/misc/built-in.o 
+input/modules.builtin:kernel/drivers/input/input-core.ko
+input/modules.builtin:kernel/drivers/input/input-polldev.ko
+Binary file input/built-in.o matches
+input/misc/uinput.c:#include "../input-compat.h"
+input/misc/uinput.c:	 * told in Documentation/input/input-programming.txt */
+input/misc/ab8500-ponkey.c:	input->name = "AB8500 POn(PowerOn) Key";
+input/misc/ab8500-ponkey.c:	input->dev.parent = &pdev->dev;
+input/misc/pcf50633-input.c:	onkey_released = pcf50633_reg_read(input->pcf, PCF50633_REG_OOCSTAT)
+input/misc/pcf50633-input.c:		input_report_key(input->input_dev, KEY_POWER, 1);
+input/misc/pcf50633-input.c:		input_report_key(input->input_dev, KEY_POWER, 0);
+input/misc/pcf50633-input.c:	input_sync(input->input_dev);
+input/misc/pcf50633-input.c:	input->pcf = dev_to_pcf50633(pdev->dev.parent);
+input/misc/pcf50633-input.c:	input->input_dev = input_dev;
+input/misc/pcf50633-input.c:	pcf50633_register_irq(input->pcf, PCF50633_IRQ_ONKEYR,
+input/misc/pcf50633-input.c:	pcf50633_register_irq(input->pcf, PCF50633_IRQ_ONKEYF,
+input/misc/pcf50633-input.c:	pcf50633_free_irq(input->pcf, PCF50633_IRQ_ONKEYR);
+input/misc/pcf50633-input.c:	pcf50633_free_irq(input->pcf, PCF50633_IRQ_ONKEYF);
+input/misc/pcf50633-input.c:	input_unregister_device(input->input_dev);
+input/misc/rb532_button.c:#include <linux/input-polldev.h>
+input/misc/rb532_button.c:	poll_dev->input->name = "rb532 button";
+input/misc/rb532_button.c:	poll_dev->input->phys = "rb532/button0";
+input/misc/rb532_button.c:	poll_dev->input->id.bustype = BUS_HOST;
+input/misc/rb532_button.c:	poll_dev->input->dev.parent = &pdev->dev;
+input/misc/dm355evm_keys.c:	input->name = "DM355 EVM Controls";
+input/misc/dm355evm_keys.c:	input->phys = "dm355evm/input0";
+input/misc/dm355evm_keys.c:	input->dev.parent = &pdev->dev;
+input/misc/dm355evm_keys.c:	input->id.bustype = BUS_I2C;
+input/misc/dm355evm_keys.c:	input->id.product = 0x0355;
+input/misc/dm355evm_keys.c:	input->id.version = dm355evm_msp_read(DM355EVM_MSP_FIRMREV);
+input/misc/twl6040-vibra.c:		dev_info(&input->dev, "Vibra is configured for audio\n");
+input/misc/twl6040-vibra.c:		dev_info(&input->dev, "work is already on queue\n");
+input/misc/sgi_btns.c:#include <linux/input-polldev.h>
+input/misc/sgi_btns.c:	input->name = "SGI buttons";
+input/misc/sgi_btns.c:	input->phys = "sgi/input0";
+input/misc/sgi_btns.c:	input->id.bustype = BUS_HOST;
+input/misc/sgi_btns.c:	input->dev.parent = &pdev->dev;
+input/misc/sgi_btns.c:	input->keycode = bdev->keymap;
+input/misc/sgi_btns.c:	input->keycodemax = ARRAY_SIZE(bdev->keymap);
+input/misc/sgi_btns.c:	input->keycodesize = sizeof(unsigned short);
+input/misc/sgi_btns.c:	__set_bit(EV_KEY, input->evbit);
+input/misc/sgi_btns.c:		__set_bit(bdev->keymap[i], input->keybit);
+input/misc/sgi_btns.c:	__clear_bit(KEY_RESERVED, input->keybit);
+input/misc/rotary_encoder.c:	input->name = pdev->name;
+input/misc/rotary_encoder.c:	input->id.bustype = BUS_HOST;
+input/misc/rotary_encoder.c:	input->dev.parent = &pdev->dev;
+input/misc/rotary_encoder.c:		input->evbit[0] = BIT_MASK(EV_REL);
+input/misc/rotary_encoder.c:		input->relbit[0] = BIT_MASK(pdata->axis);
+input/misc/rotary_encoder.c:		input->evbit[0] = BIT_MASK(EV_ABS);
+input/misc/pwm-beeper.c:	beeper->input->dev.parent = &pdev->dev;
+input/misc/pwm-beeper.c:	beeper->input->name = "pwm-beeper";
+input/misc/pwm-beeper.c:	beeper->input->phys = "pwm/input0";
+input/misc/pwm-beeper.c:	beeper->input->id.bustype = BUS_HOST;
+input/misc/pwm-beeper.c:	beeper->input->id.vendor = 0x001f;
+input/misc/pwm-beeper.c:	beeper->input->id.product = 0x0001;
+input/misc/pwm-beeper.c:	beeper->input->id.version = 0x0100;
+input/misc/pwm-beeper.c:	beeper->input->evbit[0] = BIT(EV_SND);
+input/misc/pwm-beeper.c:	beeper->input->sndbit[0] = BIT(SND_TONE) | BIT(SND_BELL);
+input/misc/pwm-beeper.c:	beeper->input->event = pwm_beeper_event;
+input/misc/cobalt_btns.c:#include <linux/input-polldev.h>
+input/misc/cobalt_btns.c:	input->name = "Cobalt buttons";
+input/misc/cobalt_btns.c:	input->phys = "cobalt/input0";
+input/misc/cobalt_btns.c:	input->id.bustype = BUS_HOST;
+input/misc/cobalt_btns.c:	input->dev.parent = &pdev->dev;
+input/misc/cobalt_btns.c:	input->keycode = bdev->keymap;
+input/misc/cobalt_btns.c:	input->keycodemax = ARRAY_SIZE(bdev->keymap);
+input/misc/cobalt_btns.c:	input->keycodesize = sizeof(unsigned short);
+input/misc/cobalt_btns.c:	__set_bit(EV_KEY, input->evbit);
+input/misc/cobalt_btns.c:		__set_bit(bdev->keymap[i], input->keybit);
+input/misc/cobalt_btns.c:	__clear_bit(KEY_RESERVED, input->keybit);
+input/misc/kxtj9.c:#include <linux/input-polldev.h>
+input/misc/wistron_btns.c:#include <linux/input-polldev.h>
+input/misc/apanel.c:#include <linux/input-polldev.h>
+input/misc/bma150.c:#include <linux/input-polldev.h>
+input/misc/bfin_rotary.c:	input->name = pdev->name;
+input/misc/bfin_rotary.c:	input->phys = "bfin-rotary/input0";
+input/misc/bfin_rotary.c:	input->dev.parent = &pdev->dev;
+input/misc/bfin_rotary.c:	input->id.bustype = BUS_HOST;
+input/misc/bfin_rotary.c:	input->id.vendor = 0x0001;
+input/misc/bfin_rotary.c:	input->id.product = 0x0001;
+input/misc/bfin_rotary.c:	input->id.version = 0x0100;
+input/misc/bfin_rotary.c:		__set_bit(EV_KEY, input->evbit);
+input/misc/bfin_rotary.c:		__set_bit(rotary->up_key, input->keybit);
+input/misc/bfin_rotary.c:		__set_bit(rotary->down_key, input->keybit);
+input/misc/bfin_rotary.c:		__set_bit(EV_REL, input->evbit);
+input/misc/bfin_rotary.c:		__set_bit(rotary->rel_code, input->relbit);
+input/misc/bfin_rotary.c:		__set_bit(EV_KEY, input->evbit);
+input/misc/bfin_rotary.c:		__set_bit(rotary->button_key, input->keybit);
+input/misc/twl4030-vibra.c:		dev_err(&input->dev, "couldn't create workqueue\n");
+input/misc/mma8450.c:#include <linux/input-polldev.h>
+input/misc/mma8450.c:	idev->input->name	= MMA8450_DRV_NAME;
+input/misc/mma8450.c:	idev->input->id.bustype	= BUS_I2C;
+input/misc/mma8450.c:	__set_bit(EV_ABS, idev->input->evbit);
+input/input.c:#include "input-compat.h"
+input/joydev.c:						  input->key);
+input/joydev.c:	spin_lock_irq(&input->event_lock);
+input/joydev.c:			test_bit(joydev->keypam[i], input->key) ? (1 << i) : 0;
+input/joydev.c:	spin_unlock_irq(&input->event_lock);
+input/.input-compat.o.cmd:cmd_drivers/input/input-compat.o := arm-arago-linux-gnueabi-gcc -Wp,-MD,drivers/input/.input-compat.o.d  -nostdinc -isystem /home/arasi/am335x/ti-sdk-am335x-evm-05.04.01.00/linux-devkit/bin/../lib/gcc/arm-arago-linux-gnueabi/4.5.3/include -I/home/arasi/am335x/ti-sdk-am335x-evm-05.04.01.00/board-support/linux-3.2-psp04.06.00.07.sdk/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include /home/arasi/am335x/ti-sdk-am335x-evm-05.04.01.00/board-support/linux-3.2-psp04.06.00.07.sdk/include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-omap2/include -Iarch/arm/plat-omap/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -marm -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(input_compat)"  -D"KBUILD_MODNAME=KBUILD_STR(input_core)" -c -o drivers/input/.tmp_input-compat.o drivers/input/input-compat.c
+input/.input-compat.o.cmd:source_drivers/input/input-compat.o := drivers/input/input-compat.c
+input/.input-compat.o.cmd:deps_drivers/input/input-compat.o := \
+input/.input-compat.o.cmd:  drivers/input/input-compat.h \
+input/.input-compat.o.cmd:drivers/input/input-compat.o: $(deps_drivers/input/input-compat.o)
+input/.input-compat.o.cmd:$(deps_drivers/input/input-compat.o):
+input/mouse/synaptics_i2c.c:	input->name = touch->client->name;
+input/mouse/synaptics_i2c.c:	input->phys = touch->client->adapter->name;
+input/mouse/synaptics_i2c.c:	input->id.bustype = BUS_I2C;
+input/mouse/synaptics_i2c.c:	input->id.version = synaptics_i2c_word_get(touch->client,
+input/mouse/synaptics_i2c.c:	input->dev.parent = &touch->client->dev;
+input/mouse/synaptics_i2c.c:	input->open = synaptics_i2c_open;
+input/mouse/synaptics_i2c.c:	input->close = synaptics_i2c_close;
+input/mouse/synaptics_i2c.c:	__set_bit(EV_REL, input->evbit);
+input/mouse/synaptics_i2c.c:	__set_bit(REL_X, input->relbit);
+input/mouse/synaptics_i2c.c:	__set_bit(REL_Y, input->relbit);
+input/mouse/synaptics_i2c.c:	__set_bit(EV_KEY, input->evbit);
+input/mouse/synaptics_i2c.c:	__set_bit(BTN_LEFT, input->keybit);
+input/mouse/pxa930_trkball.c:	input->name = pdev->name;
+input/mouse/pxa930_trkball.c:	input->id.bustype = BUS_HOST;
+input/mouse/pxa930_trkball.c:	input->open = pxa930_trkball_open;
+input/mouse/pxa930_trkball.c:	input->close = pxa930_trkball_close;
+input/mouse/pxa930_trkball.c:	input->dev.parent = &pdev->dev;
+input/mouse/Kconfig:	  not allow using xf86-input-* drivers.
+input/mouse/gpio_mouse.c:#include <linux/input-polldev.h>
+input/mouse/gpio_mouse.c:	/* set input-polldev handlers */
+input/mouse/gpio_mouse.c:	input->name = pdev->name;
+input/mouse/gpio_mouse.c:	input->id.bustype = BUS_HOST;
+input/mouse/gpio_mouse.c:	input->dev.parent = &pdev->dev;
+input/mouse/gpio_mouse.c:	struct gpio_mouse_platform_data *pdata = input->private;
+input/mouse/hgpk.c:		input->name = old_input->name;
+input/mouse/hgpk.c:		input->phys = old_input->phys;
+input/mouse/hgpk.c:		input->id = old_input->id;
+input/mouse/hgpk.c:		input->dev.parent = old_input->dev.parent;
+input/mouse/hgpk.c:	memset(input->evbit, 0, sizeof(input->evbit));
+input/mouse/hgpk.c:	memset(input->relbit, 0, sizeof(input->relbit));
+input/mouse/hgpk.c:	memset(input->keybit, 0, sizeof(input->keybit));
+input/mouse/hgpk.c:	__set_bit(EV_KEY, input->evbit);
+input/mouse/hgpk.c:	__set_bit(BTN_LEFT, input->keybit);
+input/mouse/hgpk.c:	__set_bit(BTN_RIGHT, input->keybit);
+input/mouse/hgpk.c:		__set_bit(EV_REL, input->evbit);
+input/mouse/hgpk.c:		__set_bit(REL_X, input->relbit);
+input/mouse/hgpk.c:		__set_bit(REL_Y, input->relbit);
+input/mouse/hgpk.c:		__set_bit(BTN_TOUCH, input->keybit);
+input/mouse/hgpk.c:		__set_bit(BTN_TOOL_FINGER, input->keybit);
+input/mouse/hgpk.c:		__set_bit(EV_ABS, input->evbit);
+input/mouse/hgpk.c:		__set_bit(BTN_TOUCH, input->keybit);
+input/mouse/hgpk.c:		__set_bit(BTN_TOOL_FINGER, input->keybit);
+input/mouse/hgpk.c:		__set_bit(EV_ABS, input->evbit);
+Binary file input/input-compat.o matches
+input/evdev.c:#include "input-compat.h"
+macintosh/adbhid.c:					del_timer_sync(&adbhid[i]->input->timer);
+macintosh/adbhid.c:		if (adbhid[id]->input->id.product !=
+macintosh/ams/ams.h:#include <linux/input-polldev.h>
+macintosh/ams/ams-input.c:	input->name = "Apple Motion Sensor";
+macintosh/ams/ams-input.c:	input->id.bustype = ams_info.bustype;
+macintosh/ams/ams-input.c:	input->id.vendor = 0;
+macintosh/ams/ams-input.c:	input->dev.parent = &ams_info.of_dev->dev;
+macintosh/ams/ams-input.c:	set_bit(EV_ABS, input->evbit);
+macintosh/ams/ams-input.c:	set_bit(EV_KEY, input->evbit);
+macintosh/ams/ams-input.c:	set_bit(BTN_TOUCH, input->keybit);
+media/dvb/ddbridge/ddbridge-core.c:	struct ddb *dev = input->port->dev;
+media/dvb/ddbridge/ddbridge-core.c:	spin_lock_irq(&input->lock);
+media/dvb/ddbridge/ddbridge-core.c:	input->cbuf = 0;
+media/dvb/ddbridge/ddbridge-core.c:	input->coff = 0;
+media/dvb/ddbridge/ddbridge-core.c:	ddbwritel(0, TS_INPUT_CONTROL(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:	ddbwritel(2, TS_INPUT_CONTROL(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:	ddbwritel(0, TS_INPUT_CONTROL(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:		  (input->dma_buf_num << 11) |
+media/dvb/ddbridge/ddbridge-core.c:		  (input->dma_buf_size >> 7),
+media/dvb/ddbridge/ddbridge-core.c:		  DMA_BUFFER_SIZE(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:	ddbwritel(0, DMA_BUFFER_ACK(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:	ddbwritel(3, DMA_BUFFER_CONTROL(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:	ddbwritel(9, TS_INPUT_CONTROL(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:	input->running = 1;
+media/dvb/ddbridge/ddbridge-core.c:	spin_unlock_irq(&input->lock);
+media/dvb/ddbridge/ddbridge-core.c:	struct ddb *dev = input->port->dev;
+media/dvb/ddbridge/ddbridge-core.c:	spin_lock_irq(&input->lock);
+media/dvb/ddbridge/ddbridge-core.c:	ddbwritel(0, TS_INPUT_CONTROL(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:	ddbwritel(0, DMA_BUFFER_CONTROL(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:	input->running = 0;
+media/dvb/ddbridge/ddbridge-core.c:	spin_unlock_irq(&input->lock);
+media/dvb/ddbridge/ddbridge-core.c:	struct ddb *dev = input->port->dev;
+media/dvb/ddbridge/ddbridge-core.c:	u32 idx, off, stat = input->stat;
+media/dvb/ddbridge/ddbridge-core.c:	u32 ctrl = ddbreadl(DMA_BUFFER_CONTROL(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:		ddbwritel(input->stat, DMA_BUFFER_ACK(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:	if (input->cbuf != idx)
+media/dvb/ddbridge/ddbridge-core.c:	struct ddb *dev = input->port->dev;
+media/dvb/ddbridge/ddbridge-core.c:	u32 idx, free, stat = input->stat;
+media/dvb/ddbridge/ddbridge-core.c:		if (input->cbuf == idx)
+media/dvb/ddbridge/ddbridge-core.c:		free = input->dma_buf_size - input->coff;
+media/dvb/ddbridge/ddbridge-core.c:		ret = copy_to_user(buf, input->vbuf[input->cbuf] +
+media/dvb/ddbridge/ddbridge-core.c:				   input->coff, free);
+media/dvb/ddbridge/ddbridge-core.c:		input->coff += free;
+media/dvb/ddbridge/ddbridge-core.c:		if (input->coff == input->dma_buf_size) {
+media/dvb/ddbridge/ddbridge-core.c:			input->coff = 0;
+media/dvb/ddbridge/ddbridge-core.c:			input->cbuf = (input->cbuf+1) % input->dma_buf_num;
+media/dvb/ddbridge/ddbridge-core.c:		ddbwritel((input->cbuf << 11) | (input->coff >> 7),
+media/dvb/ddbridge/ddbridge-core.c:			  DMA_BUFFER_ACK(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:	struct ddb_port *port = input->port;
+media/dvb/ddbridge/ddbridge-core.c:		status = input->gate_ctrl(fe, 1);
+media/dvb/ddbridge/ddbridge-core.c:		status = input->gate_ctrl(fe, 0);
+media/dvb/ddbridge/ddbridge-core.c:	struct i2c_adapter *i2c = &input->port->i2c->adap;
+media/dvb/ddbridge/ddbridge-core.c:	config.adr = 0x29 + (input->nr & 1);
+media/dvb/ddbridge/ddbridge-core.c:	fe = input->fe = dvb_attach(drxk_attach, &config, i2c, &input->fe2);
+media/dvb/ddbridge/ddbridge-core.c:	if (!input->fe) {
+media/dvb/ddbridge/ddbridge-core.c:	input->gate_ctrl = fe->ops.i2c_gate_ctrl;
+media/dvb/ddbridge/ddbridge-core.c:	struct i2c_adapter *i2c = &input->port->i2c->adap;
+media/dvb/ddbridge/ddbridge-core.c:	if (input->fe->ops.i2c_gate_ctrl)
+media/dvb/ddbridge/ddbridge-core.c:		input->fe->ops.i2c_gate_ctrl(input->fe, 1);
+media/dvb/ddbridge/ddbridge-core.c:	fe = dvb_attach(tda18271c2dd_attach, input->fe, i2c, 0x60);
+media/dvb/ddbridge/ddbridge-core.c:	if (input->fe->ops.i2c_gate_ctrl)
+media/dvb/ddbridge/ddbridge-core.c:		input->fe->ops.i2c_gate_ctrl(input->fe, 0);
+media/dvb/ddbridge/ddbridge-core.c:	struct i2c_adapter *i2c = &input->port->i2c->adap;
+media/dvb/ddbridge/ddbridge-core.c:	input->fe = dvb_attach(stv090x_attach, feconf, i2c,
+media/dvb/ddbridge/ddbridge-core.c:			       (input->nr & 1) ? STV090x_DEMODULATOR_1
+media/dvb/ddbridge/ddbridge-core.c:	if (!input->fe) {
+media/dvb/ddbridge/ddbridge-core.c:	if (!dvb_attach(lnbh24_attach, input->fe, i2c, 0,
+media/dvb/ddbridge/ddbridge-core.c:			0, (input->nr & 1) ?
+media/dvb/ddbridge/ddbridge-core.c:	struct i2c_adapter *i2c = &input->port->i2c->adap;
+media/dvb/ddbridge/ddbridge-core.c:	struct stv6110x_config *tunerconf = (input->nr & 1) ?
+media/dvb/ddbridge/ddbridge-core.c:	ctl = dvb_attach(stv6110x_attach, input->fe, tunerconf, i2c);
+media/dvb/ddbridge/ddbridge-core.c:			 input->nr, tunerconf->addr);
+media/dvb/ddbridge/ddbridge-core.c:	if (!input->users)
+media/dvb/ddbridge/ddbridge-core.c:	return ++input->users;
+media/dvb/ddbridge/ddbridge-core.c:	if (--input->users)
+media/dvb/ddbridge/ddbridge-core.c:		return input->users;
+media/dvb/ddbridge/ddbridge-core.c:	struct dvb_adapter *adap = &input->adap;
+media/dvb/ddbridge/ddbridge-core.c:	struct dvb_demux *dvbdemux = &input->demux;
+media/dvb/ddbridge/ddbridge-core.c:	switch (input->attached) {
+media/dvb/ddbridge/ddbridge-core.c:		if (input->fe2)
+media/dvb/ddbridge/ddbridge-core.c:			dvb_unregister_frontend(input->fe2);
+media/dvb/ddbridge/ddbridge-core.c:		if (input->fe) {
+media/dvb/ddbridge/ddbridge-core.c:			dvb_unregister_frontend(input->fe);
+media/dvb/ddbridge/ddbridge-core.c:			dvb_frontend_detach(input->fe);
+media/dvb/ddbridge/ddbridge-core.c:			input->fe = NULL;
+media/dvb/ddbridge/ddbridge-core.c:		dvb_net_release(&input->dvbnet);
+media/dvb/ddbridge/ddbridge-core.c:					      &input->hw_frontend);
+media/dvb/ddbridge/ddbridge-core.c:					      &input->mem_frontend);
+media/dvb/ddbridge/ddbridge-core.c:		dvb_dmxdev_release(&input->dmxdev);
+media/dvb/ddbridge/ddbridge-core.c:		dvb_dmx_release(&input->demux);
+media/dvb/ddbridge/ddbridge-core.c:	input->attached = 0;
+media/dvb/ddbridge/ddbridge-core.c:	struct ddb_port *port = input->port;
+media/dvb/ddbridge/ddbridge-core.c:	struct dvb_adapter *adap = &input->adap;
+media/dvb/ddbridge/ddbridge-core.c:	struct dvb_demux *dvbdemux = &input->demux;
+media/dvb/ddbridge/ddbridge-core.c:				   &input->port->dev->pdev->dev,
+media/dvb/ddbridge/ddbridge-core.c:	input->attached = 1;
+media/dvb/ddbridge/ddbridge-core.c:	input->attached = 2;
+media/dvb/ddbridge/ddbridge-core.c:	ret = my_dvb_dmxdev_ts_card_init(&input->dmxdev, &input->demux,
+media/dvb/ddbridge/ddbridge-core.c:					 &input->hw_frontend,
+media/dvb/ddbridge/ddbridge-core.c:					 &input->mem_frontend, adap);
+media/dvb/ddbridge/ddbridge-core.c:	input->attached = 3;
+media/dvb/ddbridge/ddbridge-core.c:	ret = dvb_net_init(adap, &input->dvbnet, input->dmxdev.demux);
+media/dvb/ddbridge/ddbridge-core.c:	input->attached = 4;
+media/dvb/ddbridge/ddbridge-core.c:	input->fe = 0;
+media/dvb/ddbridge/ddbridge-core.c:		if (input->fe) {
+media/dvb/ddbridge/ddbridge-core.c:			if (dvb_register_frontend(adap, input->fe) < 0)
+media/dvb/ddbridge/ddbridge-core.c:		if (input->fe) {
+media/dvb/ddbridge/ddbridge-core.c:			if (dvb_register_frontend(adap, input->fe) < 0)
+media/dvb/ddbridge/ddbridge-core.c:		if (input->fe) {
+media/dvb/ddbridge/ddbridge-core.c:			if (dvb_register_frontend(adap, input->fe) < 0)
+media/dvb/ddbridge/ddbridge-core.c:		if (input->fe2) {
+media/dvb/ddbridge/ddbridge-core.c:			if (dvb_register_frontend(adap, input->fe2) < 0)
+media/dvb/ddbridge/ddbridge-core.c:			input->fe2->tuner_priv = input->fe->tuner_priv;
+media/dvb/ddbridge/ddbridge-core.c:			memcpy(&input->fe2->ops.tuner_ops,
+media/dvb/ddbridge/ddbridge-core.c:			       &input->fe->ops.tuner_ops,
+media/dvb/ddbridge/ddbridge-core.c:	input->attached = 5;
+media/dvb/ddbridge/ddbridge-core.c:				    input->wq, ddb_input_avail(input) >= 188) < 0)
+media/dvb/ddbridge/ddbridge-core.c:	struct ddb *dev = input->port->dev;
+media/dvb/ddbridge/ddbridge-core.c:	spin_lock(&input->lock);
+media/dvb/ddbridge/ddbridge-core.c:	if (!input->running) {
+media/dvb/ddbridge/ddbridge-core.c:		spin_unlock(&input->lock);
+media/dvb/ddbridge/ddbridge-core.c:	input->stat = ddbreadl(DMA_BUFFER_CURRENT(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:	if (input->port->class == DDB_PORT_TUNER) {
+media/dvb/ddbridge/ddbridge-core.c:		if (4&ddbreadl(DMA_BUFFER_CONTROL(input->nr)))
+media/dvb/ddbridge/ddbridge-core.c:			printk(KERN_ERR "Overflow input %d\n", input->nr);
+media/dvb/ddbridge/ddbridge-core.c:		while (input->cbuf != ((input->stat >> 11) & 0x1f)
+media/dvb/ddbridge/ddbridge-core.c:		       || (4&ddbreadl(DMA_BUFFER_CONTROL(input->nr)))) {
+media/dvb/ddbridge/ddbridge-core.c:			dvb_dmx_swfilter_packets(&input->demux,
+media/dvb/ddbridge/ddbridge-core.c:						 input->vbuf[input->cbuf],
+media/dvb/ddbridge/ddbridge-core.c:						 input->dma_buf_size / 188);
+media/dvb/ddbridge/ddbridge-core.c:			input->cbuf = (input->cbuf + 1) % input->dma_buf_num;
+media/dvb/ddbridge/ddbridge-core.c:			ddbwritel((input->cbuf << 11),
+media/dvb/ddbridge/ddbridge-core.c:				  DMA_BUFFER_ACK(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:			input->stat = ddbreadl(DMA_BUFFER_CURRENT(input->nr));
+media/dvb/ddbridge/ddbridge-core.c:	if (input->port->class == DDB_PORT_CI)
+media/dvb/ddbridge/ddbridge-core.c:		wake_up(&input->wq);
+media/dvb/ddbridge/ddbridge-core.c:	spin_unlock(&input->lock);
+media/dvb/ddbridge/ddbridge-core.c:	input->nr = nr;
+media/dvb/ddbridge/ddbridge-core.c:	input->port = port;
+media/dvb/ddbridge/ddbridge-core.c:	input->dma_buf_num = INPUT_DMA_BUFS;
+media/dvb/ddbridge/ddbridge-core.c:	input->dma_buf_size = INPUT_DMA_SIZE;
+media/dvb/ddbridge/ddbridge-core.c:	tasklet_init(&input->tasklet, input_tasklet, (unsigned long) input);
+media/dvb/ddbridge/ddbridge-core.c:	spin_lock_init(&input->lock);
+media/dvb/ddbridge/ddbridge-core.c:	init_waitqueue_head(&input->wq);
+media/dvb/dvb-usb/dvb-usb-remote.c: * This file contains functions for initializing the input-device and for handling remote-control-queries.
+media/common/saa7146_hlp.c:/* select input-source */
+media/video/tea6415c.c:/* makes a connection between the input-pin 'i' and the output-pin 'o' */
+media/video/omap3isp/ispresizer.c:	min_height = ((input->height - 7) * 256 - 32 - 64 * spv) / 1024 + 1;
+media/video/omap3isp/ispresizer.c:	max_height = ((input->height - 4) * 256 + 255 - 16 - 32 * spv) / 64 + 1;
+media/video/omap3isp/ispresizer.c:	ratio->vert = ((input->height - 4) * 256 + 255 - 16 - 32 * spv)
+media/video/omap3isp/ispresizer.c:		ratio->vert = ((input->height - 7) * 256 + 255 - 32 - 64 * spv)
+media/video/omap3isp/ispresizer.c:	min_width = ((input->width - 7) * 256 - 32 - 64 * sph) / 1024 + 1;
+media/video/omap3isp/ispresizer.c:	max_width = min(((input->width - 7) * 256 + 255 - 16 - 32 * sph) / 64
+media/video/omap3isp/ispresizer.c:	ratio->horz = ((input->width - 7) * 256 + 255 - 16 - 32 * sph)
+media/video/omap3isp/ispresizer.c:		ratio->horz = ((input->width - 7) * 256 + 255 - 32 - 64 * sph)
+media/video/omap3isp/ispresizer.c:	input->left += (input->width - width) / 2;
+media/video/omap3isp/ispresizer.c:	input->top += (input->height - height) / 2;
+media/video/omap3isp/ispresizer.c:	input->width = width;
+media/video/omap3isp/ispresizer.c:	input->height = height;
+media/video/omap3isp/ispresizer.c:		res->crop_offset = (res->crop.active.top * input->width +
+media/video/omap3isp/ispvideo.c:	if (input->index > 0)
+media/video/omap3isp/ispvideo.c:	strlcpy(input->name, "camera", sizeof(input->name));
+media/video/omap3isp/ispvideo.c:	input->type = V4L2_INPUT_TYPE_CAMERA;
+media/video/cx18/cx18-cards.c:	input->index = index;
+media/video/cx18/cx18-cards.c:	strlcpy(input->name, input_strs[card_input->video_type - 1],
+media/video/cx18/cx18-cards.c:			sizeof(input->name));
+media/video/cx18/cx18-cards.c:	input->type = (card_input->video_type == CX18_CARD_INPUT_VID_TUNER ?
+media/video/cx18/cx18-cards.c:	input->audioset = (1 << cx->nof_audio_inputs) - 1;
+media/video/cx18/cx18-cards.c:	input->std = (input->type == V4L2_INPUT_TYPE_TUNER) ?
+media/video/cx18/cx18-cards.c:	strlcpy(audio->name, input_strs[aud_input->audio_type - 1],
+media/video/via-camera.c:	if (input->index != 0)
+media/video/via-camera.c:	input->type = V4L2_INPUT_TYPE_CAMERA;
+media/video/via-camera.c:	input->std = V4L2_STD_ALL; /* Not sure what should go here */
+media/video/via-camera.c:	strcpy(input->name, "Camera");
+media/video/tm6000/tm6000-stds.c:		switch (input->vmux) {
+media/video/tm6000/tm6000-stds.c:		switch (input->amux) {
+media/video/tm6000/tm6000-stds.c:		switch (input->vmux) {
+media/video/tm6000/tm6000-stds.c:			    REQ_03_SET_GET_MCU_PIN, input->v_gpio, 0);
+media/video/tm6000/tm6000-stds.c:			    REQ_03_SET_GET_MCU_PIN, input->v_gpio, 0);
+media/video/tm6000/tm6000-stds.c:			    REQ_03_SET_GET_MCU_PIN, input->v_gpio, 1);
+media/video/tm6000/tm6000-stds.c:		switch (input->amux) {
+media/video/tm6000/tm6000-stds.c:	if (input->type == TM6000_INPUT_SVIDEO) {
+media/video/tm6000/tm6000-stds.c:	    ((input->amux == TM6000_AMUX_SIF1) ||
+media/video/tm6000/tm6000-stds.c:	    (input->amux == TM6000_AMUX_SIF2)))
+media/video/ivtv/ivtv-cards.c:	input->index = index;
+media/video/ivtv/ivtv-cards.c:	strlcpy(input->name, input_strs[card_input->video_type - 1],
+media/video/ivtv/ivtv-cards.c:			sizeof(input->name));
+media/video/ivtv/ivtv-cards.c:	input->type = (card_input->video_type == IVTV_CARD_INPUT_VID_TUNER ?
+media/video/ivtv/ivtv-cards.c:	input->audioset = (1 << itv->nof_audio_inputs) - 1;
+media/video/ivtv/ivtv-cards.c:	input->std = (input->type == V4L2_INPUT_TYPE_TUNER) ?
+media/video/ivtv/ivtv-cards.c:	strlcpy(audio->name, input_strs[aud_input->audio_type - 1],
+media/video/au0828/au0828-video.c:	tmp = input->index;
+media/video/au0828/au0828-video.c:	input->index = tmp;
+media/video/au0828/au0828-video.c:	strcpy(input->name, inames[AUVI_INPUT(tmp).type]);
+media/video/au0828/au0828-video.c:		input->type |= V4L2_INPUT_TYPE_TUNER;
+media/video/au0828/au0828-video.c:		input->type |= V4L2_INPUT_TYPE_CAMERA;
+media/video/au0828/au0828-video.c:	input->std = dev->vdev->tvnorms;
+media/video/cx23885/cx23885-417.c:	if (input->type == 0)
+media/video/cx23885/cx23885-417.c:	 * strcpy(i->name, input->name); */
+media/video/cx23885/cx23885-417.c:	if (input->type == CX23885_VMUX_TELEVISION ||
+media/video/cx23885/cx23885-417.c:	    input->type == CX23885_VMUX_CABLE)
+media/video/davinci/vpif_capture.c:	if (input->index >= chan_cfg->input_count) {
+media/video/davinci/vpif_capture.c:	memcpy(input, &chan_cfg->inputs[input->index].input,
+media/video/marvell-ccic/mcam-core.c:	if (input->index != 0)
+media/video/marvell-ccic/mcam-core.c:	input->type = V4L2_INPUT_TYPE_CAMERA;
+media/video/marvell-ccic/mcam-core.c:	input->std = V4L2_STD_ALL; /* Not sure what should go here */
+media/video/marvell-ccic/mcam-core.c:	strcpy(input->name, "Camera");
+media/video/gspca/gspca.c:	if (input->index != 0)
+media/video/gspca/gspca.c:	input->type = V4L2_INPUT_TYPE_CAMERA;
+media/video/gspca/gspca.c:	input->status = gspca_dev->cam.input_flags;
+media/video/gspca/gspca.c:	strlcpy(input->name, gspca_dev->sd_desc->name,
+media/video/gspca/gspca.c:		sizeof input->name);
+media/video/saa7134/saa7134-tvaudio.c:		dev->ctl_mute,dev->automute,dev->input->name,mute,in->name);
+media/video/saa7134/saa7134-tvaudio.c:	switch (dev->input->amux) {
+media/video/saa7134/saa7134-tvaudio.c:	    i2s_format = (dev->input->amux == TV) ? 0x00 : 0x01;
+media/video/saa7134/saa7134-tvaudio.c:	if (dev->input->amux != TV) {
+media/video/saa7134/saa7134-alsa.c:	amux = dev->input->amux;
+media/video/saa7134/saa7134-video.c:	if (dev->input->amux == TV) {
+media/video/cx231xx/cx231xx-417.c:	if (input->type == 0)
+media/video/cx231xx/cx231xx-417.c:	 * strcpy(i->name, input->name); */
+media/video/cx231xx/cx231xx-417.c:	if (input->type == CX231XX_VMUX_TELEVISION ||
+media/video/cx231xx/cx231xx-417.c:	    input->type == CX231XX_VMUX_CABLE)
+media/video/stk-webcam.c:	if (input->index != 0)
+media/video/stk-webcam.c:	strcpy(input->name, "Syntek USB Camera");
+media/video/stk-webcam.c:	input->type = V4L2_INPUT_TYPE_CAMERA;
+media/video/uvc/uvc_v4l2.c:		u32 index = input->index;
+media/video/uvc/uvc_v4l2.c:		input->index = index;
+media/video/uvc/uvc_v4l2.c:		strlcpy(input->name, iterm->name, sizeof input->name);
+media/video/uvc/uvc_v4l2.c:			input->type = V4L2_INPUT_TYPE_CAMERA;
+media/video/uvc/uvc_status.c:	input->name = dev->name;
+media/video/uvc/uvc_status.c:	input->phys = dev->input_phys;
+media/video/uvc/uvc_status.c:	usb_to_input_id(dev->udev, &input->id);
+media/video/uvc/uvc_status.c:	input->dev.parent = &dev->intf->dev;
+media/video/uvc/uvc_status.c:	__set_bit(EV_KEY, input->evbit);
+media/video/uvc/uvc_status.c:	__set_bit(KEY_CAMERA, input->keybit);
+media/video/mxb.c:/* These are the necessary input-output-pins for bringing one audio source
+media/video/mxb.c:/* These are the necessary input-output-pins for bringing one audio source
+media/video/mxb.c:	   for the input-port handling of the saa7146. */
+mfd/tps65010.c:	/* GPIOs may be input-only */
+misc/lis3lv02d/.lis3lv02d_i2c.o.cmd:  include/linux/input-polldev.h \
+misc/lis3lv02d/lis3lv02d.h:#include <linux/input-polldev.h>
+misc/lis3lv02d/lis3lv02d.c:#include <linux/input-polldev.h>
+misc/lis3lv02d/.lis3lv02d.o.cmd:  include/linux/input-polldev.h \
+misc/ibmasm/remote.c:	if (input->type == INPUT_TYPE_MOUSE) {
+misc/ibmasm/remote.c:		unsigned char buttons = input->mouse_buttons;
+misc/ibmasm/remote.c:			input->data.mouse.x, input->data.mouse.y,
+misc/ibmasm/remote.c:				input->data.keyboard.key_code,
+misc/ibmasm/remote.c:				input->data.keyboard.key_code,
+misc/ibmasm/remote.c:				input->data.keyboard.key_flag,
+misc/ibmasm/remote.c:				input->data.keyboard.key_down
+misc/ibmasm/remote.c:	unsigned char buttons = input->mouse_buttons;
+misc/ibmasm/remote.c:	input_report_abs(dev, ABS_X, input->data.mouse.x);
+misc/ibmasm/remote.c:	input_report_abs(dev, ABS_Y, input->data.mouse.y);
+misc/ibmasm/remote.c:	unsigned short code = input->data.keyboard.key_code;
+misc/ibmasm/remote.c:	input_report_key(dev, key, input->data.keyboard.key_down);
+modules.builtin:kernel/drivers/input/input-core.ko
+modules.builtin:kernel/drivers/input/input-polldev.ko
+net/wireless/rt2x00/rt2x00.h:#include <linux/input-polldev.h>
+net/wireless/ath/carl9170/main.c:	input->name = ar->wps.name;
+net/wireless/ath/carl9170/main.c:	input->phys = ar->wps.phys;
+net/wireless/ath/carl9170/main.c:	input->id.bustype = BUS_USB;
+net/wireless/ath/carl9170/main.c:	input->dev.parent = &ar->hw->wiphy->dev;
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	input->dword_stream[0]  &= input_mask->dword_stream[0];
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	input->dword_stream[1]  &= input_mask->dword_stream[1];
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	input->dword_stream[2]  &= input_mask->dword_stream[2];
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	input->dword_stream[3]  &= input_mask->dword_stream[3];
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	input->dword_stream[4]  &= input_mask->dword_stream[4];
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	input->dword_stream[5]  &= input_mask->dword_stream[5];
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	input->dword_stream[6]  &= input_mask->dword_stream[6];
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	input->dword_stream[7]  &= input_mask->dword_stream[7];
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	input->dword_stream[8]  &= input_mask->dword_stream[8];
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	input->dword_stream[9]  &= input_mask->dword_stream[9];
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	input->dword_stream[10] &= input_mask->dword_stream[10];
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	flow_vm_vlan = ntohl(input->dword_stream[0]);
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	hi_hash_dword = ntohl(input->dword_stream[1] ^
+net/ethernet/intel/ixgbe/ixgbe_82599.c:				    input->dword_stream[2] ^
+net/ethernet/intel/ixgbe/ixgbe_82599.c:				    input->dword_stream[3] ^
+net/ethernet/intel/ixgbe/ixgbe_82599.c:				    input->dword_stream[4] ^
+net/ethernet/intel/ixgbe/ixgbe_82599.c:				    input->dword_stream[5] ^
+net/ethernet/intel/ixgbe/ixgbe_82599.c:				    input->dword_stream[6] ^
+net/ethernet/intel/ixgbe/ixgbe_82599.c:				    input->dword_stream[7] ^
+net/ethernet/intel/ixgbe/ixgbe_82599.c:				    input->dword_stream[8] ^
+net/ethernet/intel/ixgbe/ixgbe_82599.c:				    input->dword_stream[9] ^
+net/ethernet/intel/ixgbe/ixgbe_82599.c:				    input->dword_stream[10]);
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	input->formatted.bkt_hash = bucket_hash & 0x1FFF;
+net/ethernet/intel/ixgbe/ixgbe_82599.c:			     input->formatted.src_ip[0]);
+net/ethernet/intel/ixgbe/ixgbe_82599.c:			     input->formatted.src_ip[1]);
+net/ethernet/intel/ixgbe/ixgbe_82599.c:			     input->formatted.src_ip[2]);
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	IXGBE_WRITE_REG_BE32(hw, IXGBE_FDIRIPSA, input->formatted.src_ip[0]);
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	IXGBE_WRITE_REG_BE32(hw, IXGBE_FDIRIPDA, input->formatted.dst_ip[0]);
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	fdirport = ntohs(input->formatted.dst_port);
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	fdirport |= ntohs(input->formatted.src_port);
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	fdirvlan = IXGBE_STORE_AS_BE16(input->formatted.flex_bytes);
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	fdirvlan |= ntohs(input->formatted.vlan_id);
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	fdirhash = input->formatted.bkt_hash;
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	fdircmd |= input->formatted.flow_type << IXGBE_FDIRCMD_FLOW_TYPE_SHIFT;
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	fdircmd |= (u32)input->formatted.vm_pool << IXGBE_FDIRCMD_VT_POOL_SHIFT;
+net/ethernet/intel/ixgbe/ixgbe_82599.c:	fdirhash = input->formatted.bkt_hash;
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:			       input->filter.formatted.bkt_hash)) {
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:	INIT_HLIST_NODE(&input->fdir_node);
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:		hlist_add_after(parent, &input->fdir_node);
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:		hlist_add_head(&input->fdir_node,
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:	input->sw_idx = fsp->location;
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:					 &input->filter.formatted.flow_type)) {
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:	if (input->filter.formatted.flow_type == IXGBE_ATR_FLOW_TYPE_IPV4)
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:	input->filter.formatted.src_ip[0] = fsp->h_u.tcp_ip4_spec.ip4src;
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:	input->filter.formatted.dst_ip[0] = fsp->h_u.tcp_ip4_spec.ip4dst;
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:	input->filter.formatted.src_port = fsp->h_u.tcp_ip4_spec.psrc;
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:	input->filter.formatted.dst_port = fsp->h_u.tcp_ip4_spec.pdst;
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:		input->filter.formatted.vm_pool =
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:		input->filter.formatted.vlan_id = fsp->h_ext.vlan_tci;
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:		input->filter.formatted.flex_bytes =
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:		input->action = IXGBE_FDIR_DROP_QUEUE;
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:		input->action = fsp->ring_cookie;
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:	ixgbe_atr_compute_perfect_hash_82599(&input->filter, &mask);
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:				&input->filter, input->sw_idx,
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:				(input->action == IXGBE_FDIR_DROP_QUEUE) ?
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:				adapter->rx_ring[input->action]->reg_idx);
+net/ethernet/intel/ixgbe/ixgbe_ethtool.c:	ixgbe_update_ethtool_fdir_entry(adapter, input, input->sw_idx);
+platform/x86/hdaps.c:#include <linux/input-polldev.h>
+platform/x86/eeepc-laptop.c:	input->name = "Asus EeePC extra buttons";
+platform/x86/eeepc-laptop.c:	input->phys = EEEPC_LAPTOP_FILE "/input0";
+platform/x86/eeepc-laptop.c:	input->id.bustype = BUS_HOST;
+platform/x86/eeepc-laptop.c:	input->dev.parent = &eeepc->platform_device->dev;
+platform/x86/classmate-laptop.c:	acpi = to_acpi_device(input->dev.parent);
+platform/x86/classmate-laptop.c:	acpi = to_acpi_device(input->dev.parent);
+platform/x86/asus-laptop.c:#include <linux/input-polldev.h>
+platform/x86/asus-laptop.c:	struct device *parent = ipd->input->dev.parent;
+platform/x86/asus-laptop.c:	ipd->input->name = PEGA_ACCEL_DESC;
+platform/x86/asus-laptop.c:	ipd->input->phys = PEGA_ACCEL_NAME "/input0";
+platform/x86/asus-laptop.c:	ipd->input->dev.parent = &asus->platform_device->dev;
+platform/x86/asus-laptop.c:	ipd->input->id.bustype = BUS_HOST;
+platform/x86/asus-laptop.c:	set_bit(EV_ABS, ipd->input->evbit);
+platform/x86/asus-laptop.c:	input->name = "Asus Laptop extra buttons";
+platform/x86/asus-laptop.c:	input->phys = ASUS_LAPTOP_FILE "/input0";
+platform/x86/asus-laptop.c:	input->id.bustype = BUS_HOST;
+platform/x86/asus-laptop.c:	input->dev.parent = &asus->platform_device->dev;
+platform/x86/asus-laptop.c:		kobject_uevent(&asus->pega_accel_poll->input->dev.kobj,
+platform/x86/intel_mid_powerbtn.c:		dev_err(input->dev.parent, "Read error %d while reading"
+platform/x86/intel_mid_powerbtn.c:	input->name = pdev->name;
+platform/x86/intel_mid_powerbtn.c:	input->phys = "power-button/input0";
+platform/x86/intel_mid_powerbtn.c:	input->id.bustype = BUS_HOST;
+platform/x86/intel_mid_powerbtn.c:	input->dev.parent = &pdev->dev;
+platform/x86/xo15-ebook.c:	input->name = name;
+platform/x86/xo15-ebook.c:	input->phys = button->phys;
+platform/x86/xo15-ebook.c:	input->id.bustype = BUS_HOST;
+platform/x86/xo15-ebook.c:	input->dev.parent = &device->dev;
+platform/x86/xo15-ebook.c:	input->evbit[0] = BIT_MASK(EV_SW);
+platform/x86/xo15-ebook.c:	set_bit(SW_TABLET_MODE, input->swbit);
+platform/x86/topstar-laptop.c:	input->name = "Topstar Laptop extra buttons";
+platform/x86/topstar-laptop.c:	input->phys = "topstar/input0";
+platform/x86/topstar-laptop.c:	input->id.bustype = BUS_HOST;
+platform/x86/fujitsu-laptop.c:	input->name = acpi_device_name(device);
+platform/x86/fujitsu-laptop.c:	input->phys = fujitsu->phys;
+platform/x86/fujitsu-laptop.c:	input->id.bustype = BUS_HOST;
+platform/x86/fujitsu-laptop.c:	input->id.product = 0x06;
+platform/x86/fujitsu-laptop.c:	input->dev.parent = &device->dev;
+platform/x86/fujitsu-laptop.c:	input->evbit[0] = BIT(EV_KEY);
+platform/x86/fujitsu-laptop.c:	set_bit(KEY_BRIGHTNESSUP, input->keybit);
+platform/x86/fujitsu-laptop.c:	set_bit(KEY_BRIGHTNESSDOWN, input->keybit);
+platform/x86/fujitsu-laptop.c:	set_bit(KEY_UNKNOWN, input->keybit);
+platform/x86/fujitsu-laptop.c:	input->name = acpi_device_name(device);
+platform/x86/fujitsu-laptop.c:	input->phys = fujitsu_hotkey->phys;
+platform/x86/fujitsu-laptop.c:	input->id.bustype = BUS_HOST;
+platform/x86/fujitsu-laptop.c:	input->id.product = 0x06;
+platform/x86/fujitsu-laptop.c:	input->dev.parent = &device->dev;
+platform/x86/fujitsu-laptop.c:	set_bit(EV_KEY, input->evbit);
+platform/x86/fujitsu-laptop.c:	set_bit(fujitsu->keycode1, input->keybit);
+platform/x86/fujitsu-laptop.c:	set_bit(fujitsu->keycode2, input->keybit);
+platform/x86/fujitsu-laptop.c:	set_bit(fujitsu->keycode3, input->keybit);
+platform/x86/fujitsu-laptop.c:	set_bit(fujitsu->keycode4, input->keybit);
+platform/x86/fujitsu-laptop.c:	set_bit(KEY_UNKNOWN, input->keybit);
+s390/cio/fcx.c: * Calculate the input-/output-count and tccbl field in the tcw, add a
+s390/cio/fcx.c: * Note: in case input- or output-tida is used, the tidaw-list must be stored
+s390/cio/itcw.c: * Calculate tcw input-/output-count and tccbl fields and add a tcat the tccb.
+s390/cio/itcw.c: * In case input- or output-tida is used, the tidaw-list must be stored in
+s390/char/tty3270.c:	if (tp->input->string[0] == 0x7d) {
+s390/char/tty3270.c:		input = tp->input->string + 6;
+s390/char/tty3270.c:		len = tp->input->len - 6 - rrq->rescnt;
+s390/char/tty3270.c:	} else if (tp->input->string[0] == 0x6d) {
+s390/char/tty3270.c:		kbd_keycode(tp->kbd, 256 + tp->input->string[0]);
+s390/char/tty3270.c:	raw3270_request_set_data(rrq, tp->input->string, tp->input->len);
+s390/char/con3270.c:	switch (cp->input->string[0]) {
+s390/char/con3270.c:	raw3270_request_set_data(rrq, cp->input->string, cp->input->len);
+scsi/ibmmca.c:		   running without an input-data-block. */
+scsi/wd33c93.c: * of transfer periods in sx_table to the actual input-clock.
+scsi/wd33c93.c: *                    input-clock divisor 4 (WD33C93_FS_16_20), x = 0 to disable
+scsi/wd33c93.c: * Calculate internal data-transfer-clock cycle from input-clock
+scsi/wd33c93.c: * for (only) the lower limits of the respective input-clock-frequency ranges
+scsi/wd33c93.c: * closer to the really attached, possibly 25% higher, input-clock, since
+scsi/wd33c93.c:		d = 2;	/* divisor for  8-10 MHz input-clock */
+scsi/wd33c93.c:		d = 3;	/* divisor for 12-15 MHz input-clock */
+scsi/wd33c93.c:		d = 4;	/* divisor for 16-20 MHz input-clock */
+scsi/wd33c93.h:   /* pass input-clock explicitly. accepted mhz values are 8-10,12-20 */
+sh/pfc.c:				 * input-only or output-only pins without
+staging/tidspbridge/rmgr/node.c:		if (input->sz_device) {
+staging/tidspbridge/rmgr/node.c:		input->sz_device = kzalloc(PIPENAMELEN + 1, GFP_KERNEL);
+staging/tidspbridge/rmgr/node.c:		if (!output->sz_device || !input->sz_device) {
+staging/tidspbridge/rmgr/node.c:			kfree(input->sz_device);
+staging/tidspbridge/rmgr/node.c:		strcpy(input->sz_device, output->sz_device);
+staging/tidspbridge/rmgr/node.c:			input->sz_device = pstr_dev_name;
+staging/quickstart/quickstart.c:	quickstart_input->name = "Quickstart ACPI Buttons";
+staging/quickstart/quickstart.c:	quickstart_input->id.bustype = BUS_HOST;
+staging/quickstart/quickstart.c:		set_bit(EV_KEY, quickstart_input->evbit);
+staging/quickstart/quickstart.c:		set_bit((*ptr)->id, quickstart_input->keybit);
+staging/comedi/drivers/usbduxsigma.c: * Size of the async input-buffer IN BYTES, the DIO state is transmitted
+staging/comedi/drivers/usbdux.c: * Size of the input-buffer IN BYTES
+staging/comedi/drivers/usbduxfast.c: * size of the input-buffer IN BYTES
+staging/media/solo6x10/v4l2.c:	if (input->index >= (solo_dev->nr_chans + solo_dev->nr_ext))
+staging/media/solo6x10/v4l2.c:	snprintf(input->name, sizeof(input->name), "Multi %s",
+staging/media/solo6x10/v4l2.c:		 dispnames[input->index - solo_dev->nr_chans]);
+staging/media/solo6x10/v4l2.c:	if (input->index >= solo_dev->nr_chans) {
+staging/media/solo6x10/v4l2.c:		snprintf(input->name, sizeof(input->name), "Camera %d",
+staging/media/solo6x10/v4l2.c:			 input->index + 1);
+staging/media/solo6x10/v4l2.c:		if (!tw28_get_video_status(solo_dev, input->index))
+staging/media/solo6x10/v4l2.c:			input->status = V4L2_IN_ST_NO_SIGNAL;
+staging/media/solo6x10/v4l2.c:	input->type = V4L2_INPUT_TYPE_CAMERA;
+staging/media/solo6x10/v4l2.c:		input->std = V4L2_STD_NTSC_M;
+staging/media/solo6x10/v4l2.c:		input->std = V4L2_STD_PAL_B;
+staging/media/solo6x10/v4l2-enc.c:	if (input->index)
+staging/media/solo6x10/v4l2-enc.c:	snprintf(input->name, sizeof(input->name), "Encoder %d",
+staging/media/solo6x10/v4l2-enc.c:	input->type = V4L2_INPUT_TYPE_CAMERA;
+staging/media/solo6x10/v4l2-enc.c:		input->std = V4L2_STD_NTSC_M;
+staging/media/solo6x10/v4l2-enc.c:		input->std = V4L2_STD_PAL_B;
+staging/media/solo6x10/v4l2-enc.c:		input->status = V4L2_IN_ST_NO_SIGNAL;
+staging/media/dt3155v4l/dt3155v4l.c:	if (input->index)
+staging/media/dt3155v4l/dt3155v4l.c:	strcpy(input->name, "Coax in");
+staging/media/dt3155v4l/dt3155v4l.c:	input->type = V4L2_INPUT_TYPE_CAMERA;
+staging/media/dt3155v4l/dt3155v4l.c:	 * FIXME: input->std = 0 according to v4l2 API
+staging/media/dt3155v4l/dt3155v4l.c:	input->std = DT3155_CURRENT_NORM;
+staging/media/dt3155v4l/dt3155v4l.c:	input->status = 0;/* FIXME: add sync detection & V4L2_IN_ST_NO_H_LOCK */
+staging/panel/panel.c:	if (((phys_prev & input->mask) == input->value)
+staging/panel/panel.c:	    && ((phys_curr & input->mask) > input->value)) {
+staging/panel/panel.c:		input->state = INPUT_ST_LOW; /* invalidate */
+staging/panel/panel.c:	if ((phys_curr & input->mask) == input->value) {
+staging/panel/panel.c:		if ((input->type == INPUT_TYPE_STD) &&
+staging/panel/panel.c:		    (input->high_timer == 0)) {
+staging/panel/panel.c:			input->high_timer++;
+staging/panel/panel.c:			if (input->u.std.press_fct != NULL)
+staging/panel/panel.c:				input->u.std.press_fct(input->u.std.press_data);
+staging/panel/panel.c:		} else if (input->type == INPUT_TYPE_KBD) {
+staging/panel/panel.c:			if (input->high_timer == 0) {
+staging/panel/panel.c:				char *press_str = input->u.kbd.press_str;
+staging/panel/panel.c:			if (input->u.kbd.repeat_str[0]) {
+staging/panel/panel.c:				char *repeat_str = input->u.kbd.repeat_str;
+staging/panel/panel.c:				if (input->high_timer >= KEYPAD_REP_START) {
+staging/panel/panel.c:					input->high_timer -= KEYPAD_REP_DELAY;
+staging/panel/panel.c:			if (input->high_timer < 255)
+staging/panel/panel.c:				input->high_timer++;
+staging/panel/panel.c:		input->state = INPUT_ST_FALLING;
+staging/panel/panel.c:		input->fall_timer = 0;
+staging/panel/panel.c:	if (((phys_prev & input->mask) == input->value)
+staging/panel/panel.c:	    && ((phys_curr & input->mask) > input->value)) {
+staging/panel/panel.c:		input->state = INPUT_ST_LOW;	/* invalidate */
+staging/panel/panel.c:	if ((phys_curr & input->mask) == input->value) {
+staging/panel/panel.c:		if (input->type == INPUT_TYPE_KBD) {
+staging/panel/panel.c:			if (input->u.kbd.repeat_str[0]) {
+staging/panel/panel.c:				char *repeat_str = input->u.kbd.repeat_str;
+staging/panel/panel.c:				if (input->high_timer >= KEYPAD_REP_START)
+staging/panel/panel.c:					input->high_timer -= KEYPAD_REP_DELAY;
+staging/panel/panel.c:			if (input->high_timer < 255)
+staging/panel/panel.c:				input->high_timer++;
+staging/panel/panel.c:		input->state = INPUT_ST_HIGH;
+staging/panel/panel.c:	} else if (input->fall_timer >= input->fall_time) {
+staging/panel/panel.c:		if (input->type == INPUT_TYPE_STD) {
+staging/panel/panel.c:			void (*release_fct)(int) = input->u.std.release_fct;
+staging/panel/panel.c:				release_fct(input->u.std.release_data);
+staging/panel/panel.c:		} else if (input->type == INPUT_TYPE_KBD) {
+staging/panel/panel.c:			char *release_str = input->u.kbd.release_str;
+staging/panel/panel.c:		input->state = INPUT_ST_LOW;
+staging/panel/panel.c:		input->fall_timer++;
+staging/panel/panel.c:		switch (input->state) {
+staging/panel/panel.c:			if ((phys_curr & input->mask) != input->value)
+staging/panel/panel.c:			if ((phys_prev & input->mask) == input->value)
+staging/panel/panel.c:			input->rise_timer = 0;
+staging/panel/panel.c:			input->state = INPUT_ST_RISING;
+staging/panel/panel.c:			if ((phys_curr & input->mask) != input->value) {
+staging/panel/panel.c:				input->state = INPUT_ST_LOW;
+staging/panel/panel.c:			if (input->rise_timer < input->rise_time) {
+staging/panel/panel.c:				input->rise_timer++;
+staging/panel/panel.c:			input->high_timer = 0;
+staging/panel/panel.c:			input->state = INPUT_ST_HIGH;
